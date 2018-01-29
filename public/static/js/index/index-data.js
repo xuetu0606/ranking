@@ -64,11 +64,11 @@ m.controller(
              * 到底之后调用获取数据的方法
              * @method 自动调用
              */
-            $(".a").scroll(function () {
-                var h = $(this).height(); //div可视区域的高度
-                var sh = $(this)[0].scrollHeight; //滚动的高度，$(this)指代jQuery对象，而$(this)[0]指代的是dom节点
-                var st = $(this)[0].scrollTop; //滚动条的高度，即滚动条的当前位置到div顶部的距离
-                if (h + st >= sh) {
+             $(window).scroll(function () {
+                let a = $(window).scrollTop();
+                let b = $(document).height();
+                let c = $(window).height();
+                if (a >= b - c) {
                     //上面的代码是判断滚动条滑到底部的代码
                     //alert("滑到底部了");
                     if ($scope.page < $scope.data.data.data.last_page){

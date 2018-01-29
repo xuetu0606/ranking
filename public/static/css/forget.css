@@ -4,6 +4,9 @@
 }
 input {
   font-size: 0.28rem;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 .center {
   width: 100%;
@@ -149,7 +152,7 @@ input {
   height: 0.8rem;
   border: 0;
   outline: none;
-  background: #f90;
+  background: #00affb;
   color: #fff;
   font-size: 0.36rem;
   border-radius: 3px;

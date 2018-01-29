@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:100:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\error_is_ranking.html";i:1516937763;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:100:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\error_is_ranking.html";i:1516985951;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

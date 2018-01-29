@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1516936384;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517206032;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_login_application">
 
@@ -32,7 +32,7 @@
             <label for="mima">
                 <img src="/static/img/suo.png" alt="">
             </label>
-            <input type="text" placeholder="密码" id="mima" ng-model="data.password">
+            <input type="password" placeholder="密码" id="mima" ng-model="data.password">
         </div>
 
         <div>

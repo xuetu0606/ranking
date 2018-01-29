@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1516976717;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517206032;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_choice_application">
 
@@ -78,7 +78,7 @@
                 <div class="cell-item" ng-repeat="(k, v) in curriculum_arr">
                     <div class="cell-left" ng-bind="v.curriculum_name"></div>
                     <div class="cell-right">
-                        <input type="text" class="cell-input curriculum" id="{{v.id}}" name="{{v.id}}" placeholder="请输入您的科目{{v.id}}成绩" autocomplete="off">
+                        <input type="text" class="cell-input curriculum" id="{{v.id}}" name="{{v.id}}" placeholder="请输入您的成绩" autocomplete="off">
                     </div>
                 </div>
 

@@ -20,7 +20,15 @@ class School extends Base{
     }
 
     public function school_list_data(){
-
+        $request = request();
+        $request_arr = $request->post();
+        $colleges_arrs = model("colleges")->getCollegesList($request_arr);
+        return $this->response_return_json(
+            $colleges_arrs,
+            $colleges_arrs,
+            "获取成功",
+            "获取失败"
+        );
     }
 
 }

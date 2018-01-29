@@ -17,8 +17,6 @@
 
 <body ng-controller="ranking_index_register_controller">
 
-
-
     <div class="center">
         <div>
             <img src="/static/img/header.jpg" alt="LOGO">
@@ -30,19 +28,19 @@
             <input type="text" placeholder="手机号" id="number" ng-model="data.telephone">
         </div>
         <div>
-            <label for="mima">
+            <label for="mima1">
                 <img src="/static/img/suo.png" alt="验证码">
             </label>
-            <input type="text" placeholder="请输入验证码" id="mima" ng-model="data.code">
+            <input type="text" placeholder="请输入验证码" id="mima1" ng-model="data.code">
             <div>
                 <img id="captcha_src" src="/captcha.html" onclick="javascript:this.src='/captcha.html?tm='+Math.random();">
             </div>
         </div>
         <div>
-            <label for="mima">
+            <label for="mima2">
                 <img src="/static/img/suo.png" alt="密码">
             </label>
-            <input type="password" placeholder="密码" id="mima" ng-model="data.password">
+            <input type="password" placeholder="密码" id="mima2" ng-model="data.password">
         </div>
         <div>
             <input type="submit" value="注册" ng-click="register();">

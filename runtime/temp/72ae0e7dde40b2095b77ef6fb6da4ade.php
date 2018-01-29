@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\index.html";i:1517054057;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\index.html";i:1517206032;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_index_application">
 
@@ -59,7 +59,7 @@
                     <div>
                         <span class="iconfont icon-xuexiao"></span>
                     </div>
-                    <div>院校选择</div>
+                    <div>院校</div>
                 </a>
             </div>
             <div>
@@ -67,7 +67,7 @@
                     <div>
                         <span class="iconfont icon-paiming"></span>
                     </div>
-                    <div>我的排名</div>
+                    <div>排名</div>
                 </a>
             </div>
             <div>
@@ -75,7 +75,7 @@
                     <div>
                         <span class="iconfont icon-icon-"></span>
                     </div>
-                    <div>退出登录</div>
+                    <div>退出</div>
                 </a>
             </div>
         </div>

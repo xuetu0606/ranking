@@ -1,228 +1,118 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  background-color: #fff;
-  height: 1rem;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    height: 1rem;
+    border-bottom: #f5f5f5 solid 1px;
 }
 
 .header>div:nth-of-type(1)>p {
-  text-align: center;
-  line-height: 1rem;
+    text-align: center;
+    line-height: 1rem;
 }
 
 .header>div:nth-of-type(2) {
-  position: absolute;
-  top: 0.3rem;
-  left: 0.4rem;
+    position: absolute;
+    top: 0.3rem;
+    left: 0.4rem;
 }
 
 .header>div:nth-of-type(2)>img {
-  width: 0.3rem;
-  height: 0.3rem;
+    width: 0.3rem;
+    height: 0.3rem;
 }
 
 .kong {
-  height: 1rem;
-}
-
-.a {
-  height: 10.75rem;
-}
-
-.center {
-  width: 5.7rem;
-  margin: 0.2rem auto 0;
-  border: #bbb solid 0.02rem;
-  overflow: auto;
-  height: 10rem;
-  position: relative;
-}
-
-.center>p:nth-of-type(1) {
-  line-height: 0.8rem;
-  color: #12E07D;
-  text-align: center;
-}
-
-.center div {
-  width: 4.76rem;
-  margin: 0 auto 0.1rem;
-  border-bottom: #bbb solid 0.02rem;
-}
-
-.center div p {
-  overflow: hidden;
-  line-height: 0.7rem;
-  font-size: 0.28rem;
-}
-
-.center div p span:nth-of-type(1) {
-  float: left;
-  margin-left: 0.3rem;
-}
-
-.center div p span:nth-of-type(2) {
-  margin-right: 0.3rem;
-  float: right;
-}
-
-.center>p:nth-of-type(2) {
-  line-height: 0.8rem;
-  font-size: 0.30rem;
-  text-align: center;
-}
-
-.button {
-  width: 3.1rem;
-  height: 0.8rem;
-  margin: 0 auto 0.6rem;
-  background: #12E07D;
-  border-radius: 0.2rem;
-}
-
-.button a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 0.8rem;
-  text-decoration: none;
-  color: #fff;
-  font-size: 0.32rem;
-}
-
-.N p span {
-  color: #12E07D;
-}
-
-.color {
-  position: relative;
-  top: -0.74rem;
-  clear: left;
-  height: 0.72rem;
-  left: 50%;
-  width: 4.76rem;
-  margin-left: -2.38rem !important;
-  background: #fff;
-}
-
-.color>p {
-  line-height: 0.72rem;
-  font-size: 0.28rem;
-}
-
-.color>p>span {
-  color: #12E07D;
-}
-
-.color>p span:nth-of-type(1) {
-  margin-left: 0.3rem;
-  float: left;
-}
-
-.color>p span:nth-of-type(2) {
-  margin-right: 0.3rem;
-  float: right;
-}
-
-.number {
-  position: relative;
-  top: -0.6rem;
-  clear: left;
-  height: 0.2rem;
-  left: 50%;
-  width: 4.76rem;
-  margin-left: -2rem!important;
-  color: #fa4718;
+    height: 1rem;
 }
 
 .phtop .wode {
-  padding: 0.4rem 0;
-  width: 86%;
-  margin-left: 7%;
-  overflow: hidden;
+    padding: 0.4rem 0;
+    width: 86%;
+    margin-left: 7%;
+    overflow: hidden;
 }
 
 .phtop .wode img {
-  height: 1rem;
-  border-radius: 50%;
-  float: left;
-  margin-right: 0.2rem;
+    height: 1rem;
+    border-radius: 50%;
+    float: left;
+    margin-right: 0.2rem;
 }
 
 .phtop .wode .imgright {
-  height: 1rem;
-  width: 50%;
-  float: left;
+    height: 1rem;
+    width: 50%;
+    float: left;
 }
 
 .phtop .wode .imgright span {
-  font-size: 0.36rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 0.6rem;
+    font-size: 0.36rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 0.6rem;
 }
 
 .phtop .wode .imgright p {
-  font-size: 0.28rem;
-  color: rgba(255, 255, 255, 0.8);
+    font-size: 0.28rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .phtop .wode em {
-  float: right;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1rem;
-  font-size: 0.4rem;
-  font-style: normal;
+    float: right;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1rem;
+    font-size: 0.4rem;
+    font-style: normal;
 }
 
 .phtop {
-  background: #102533;
+    background: #102533;
 }
 
 .phbot {
-  background: #fff;
-  padding: 0.3rem;
-  padding-top: 0.4rem;
+    background: #fff;
+    padding: 0.3rem;
+    padding-top: 0.4rem;
 }
 
 .phbot .phlist {
-  margin-bottom: 0.3rem;
-  overflow: hidden;
+    margin-bottom: 0.3rem;
+    overflow: hidden;
 }
 
 .phbot .phlist img {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  float: left;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    float: left;
 }
 
 .phbot .phlist .name {
-  line-height: 1rem;
-  font-size: 0.32rem;
-  margin-left: 0.2rem;
+    line-height: 1rem;
+    font-size: 0.32rem;
+    margin-left: 0.2rem;
 }
 
 .phbot .phlist .score {
-  float: right;
-  line-height: 1rem;
-  font-size: 0.32rem;
-  margin-right: 0.72rem;
+    float: right;
+    line-height: 1rem;
+    font-size: 0.32rem;
+    margin-right: 0.72rem;
 }
 
 .phbot .phlist .num {
-  float: right;
-  line-height: 1rem;
-  font-size: 0.32rem;
+    float: right;
+    line-height: 1rem;
+    font-size: 0.32rem;
 }
 
-.phbot >p {
-text-align: center;
+.phbot>p {
+    text-align: center;
 }

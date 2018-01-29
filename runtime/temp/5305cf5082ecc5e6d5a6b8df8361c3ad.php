@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\ranking.html";i:1516958980;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\ranking.html";i:1517206032;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_ranking_application">
 
@@ -26,9 +26,8 @@
         </div>
     </div>
     <div class="kong">
-
     </div>
-    <div id="paihang">
+    <div class="center" id="paihang">
         <div class="phtop">
             <div class="wode">
                 <div class="imgright">
@@ -39,7 +38,6 @@
             </div>
         </div>
         <div class="phbot">
-
             <div class="phlist" ng-repeat="(k, v) in rankingArray">
                 <span class="name" ng-bind="v.user_name"></span>
                 <span class="num" ng-bind="'第'+ (k+1) +'名'"></span>
@@ -49,6 +47,9 @@
             <p ng-bind="last_str">拼命加载中~</p>
         </div>
     </div>
+    <script>
+       
+    </script>
 </body>
 
 </html>

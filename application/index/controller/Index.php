@@ -779,7 +779,6 @@ class Index extends Base {
 
         $total = $this->get_fraction_total_new($achievement_arr);
 
-        /*返回断点*/
         // 保存分数表数据,返回分数表id
         $fraction_id = $this->save_fraction_info(
             $request_arr,
@@ -917,10 +916,6 @@ class Index extends Base {
 
     }
 
-    public function existence_achievement(){
-
-    }
-
     /**
      * 计算总分
      * @param $curriculum_arr
@@ -974,7 +969,7 @@ class Index extends Base {
      */
     public function logout(){
         Session::delete("user_arr");
-        return $this->register("/index/index/login");
+        return view("/index/login");
     }
 
 }

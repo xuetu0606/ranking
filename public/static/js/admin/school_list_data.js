@@ -1,20 +1,20 @@
-var m = angular.module("ranking_admin_student_list_application", []);
+var m = angular.module("ranking_admin_school_list_application", []);
 m.controller(
-    "ranking_admin_student_list_controller",
+    "ranking_admin_school_list_controller",
     [
         "$scope",
         "$http",
         function ($scope, $http){
             $scope.page = 1;
             $scope.spiner_example = true;
-            $scope.studentArray = new Array();
+            $scope.schoolArray = new Array();
             /**
              * 获取学校数据方法
              * @method 调用
              */
             $scope.getStudentData = function (page){
                 $http.get(
-                    "/admin/student/get_colleges_data.html?page="+page
+                    "/admin/school/school_list_data.html?page="+page
                 ).then(
                     function (result){
                         $scope.data = result;
@@ -28,18 +28,21 @@ m.controller(
                             function (){
                                 if (page != 1){
                                     // 循环获取到的数据添加到页面数组里面
-                                    angular.forEach($scope.data.data.data.data, function (value, key) {
-                                        $scope.studentArray.push(value);
+                                    angular.forEach(
+                                        $scope.data.data.data.data,
+                                        function (value, key) {
+                                        $scope.schoolArray.push(value);
                                     });
                                 }else{
-                                    $scope.studentArray = $scope.data.data.data.data;
+                                    $scope.schoolArray = $scope.data
+                                        .data.data.data;
                                 }
                                 if ($scope.data.data.data.last_page <= 1){
                                     $scope.spiner_example = false;
                                 }
                                 // 把数据拉回到 $scope 的作用域里面
                                 $scope.$apply(function(){
-                                    $scope.studentArray;
+                                    $scope.schoolArray;
                                     $scope.spiner_example;
                                 });
                             }
@@ -53,7 +56,7 @@ m.controller(
                                 time : 900
                             },
                             function (){
-                                window.location.reload(true);
+                                // window.location.reload(true);
                             }
                         );
                     }
@@ -109,7 +112,7 @@ m.controller(
                 ).then(
                     function (result){
                         result_obj = result.data.data;
-console.log();
+console.log(result);
 return false;
                         //页面层
                         layer.open({

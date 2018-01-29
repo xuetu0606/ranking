@@ -55,7 +55,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            // window.location.reload(true);
+                            window.location.reload(true);
                         }
                     );
                 }
@@ -70,7 +70,6 @@ m.controller(
             ).then(
                 function (result){
                     $scope.colleges = result.data.data;
-                    console.log(result);
                 },
                 function (){
                     layer.msg(
@@ -80,7 +79,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            // window.location.reload(true);
+                            window.location.reload(true);
                         }
                     );
                 }
@@ -103,7 +102,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            // window.location.reload(true);
+                            window.location.reload(true);
                         }
                     );
                 }
@@ -137,12 +136,12 @@ m.controller(
                                     $scope.rankingArray = $scope.data.data.data.data;
                                 }
                                 if ($scope.data.data.data.last_page <= 1){
-                                    $scope.load_str = "已经到底了~";
+                                    $scope.last_str = "已经到底了~";
                                     $scope.add_ranking = true;
                                 }
                                 // 把数据拉回到 $scope 的作用域里面
                                 $scope.$apply(function(){
-                                    $scope.load_str;
+                                    $scope.last_str;
                                     $scope.add_ranking;
                                     $scope.rankingArray;
                                 });
@@ -157,7 +156,7 @@ m.controller(
                                 time : 900
                             },
                             function (){
-                                // window.location.reload(true);
+                                window.location.reload(true);
                             }
                         );
                     }

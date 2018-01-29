@@ -16,7 +16,6 @@ class Base extends Controller {
     public function __construct(){
         parent::__construct();
         $this->is_login();
-        $this->get_user_info_data();
         $this->is_ranking();
     }
 
@@ -46,9 +45,11 @@ class Base extends Controller {
             &&
             $current_path_str != Config::get("forget_data_path")
         ;
-        if (!Session::has("user_arr.id") && $is_in_path){
+        if (Session::has("user_arr.id")!=true && $is_in_path){
             return $this->redirect("/index/index/login.html");
         }
+        $this->get_user_info_data();
+
     }
 
     /**
@@ -107,8 +108,8 @@ class Base extends Controller {
      * @return mixed 用户id
      */
     public function get_user_id(){
-        $user_arr = Session::get("user_arr");
-        return $user_arr["id"];
+        $user_id = Session::get("user_arr.id");
+        return $user_id;
     }
 
     /**
@@ -165,13 +166,16 @@ class Base extends Controller {
         $fraction_arr = model("fraction")
             ->getUserFractionInfo($where_fraction_info_arr);
 
-        $user_arr = [
-            "id" => $user_id,
-            "colleges_id" => $fraction_arr["colleges_id"],
-            "user_name" => $fraction_arr["user_name"],
-            "code" => $fraction_arr["code"],
-        ];
-        Session::set("user_arr", $user_arr);
+        if (Session::has("user_arr.colleges_id")!=true){
+            Session::set("user_arr.user_name", $fraction_arr["colleges_id"]);
+        }
+        if (Session::has("user_arr.user_name")!=true){
+            Session::set("user_arr.user_name", $fraction_arr["user_name"]);
+        }
+        if (Session::has("user_arr.code")!=true){
+            Session::set("user_arr.code", $fraction_arr["code"]);
+        }
+
     }
 
     public function test_session(){

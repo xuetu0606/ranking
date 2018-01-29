@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\forget.html";i:1517206032;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\forget.html";i:1517208217;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_forget_application">
 
@@ -28,25 +28,25 @@
             <input type="text" placeholder="注册时的手机号" id="number" ng-model="data.telephone">
         </div>
         <div>
-            <label for="mima">
+            <label for="verify">
                 <img src="/static/img/suo.png" alt="验证码">
             </label>
-            <input type="text" placeholder="请输入验证码" id="mima" ng-model="data.code">
+            <input type="text" placeholder="请输入验证码" id="verify" ng-model="data.code">
             <div>
                 <img id="captcha_src" src="/captcha.html" onclick="javascript:this.src='/captcha.html?tm='+Math.random();">
             </div>
         </div>
         <div>
-            <label for="mima">
+            <label for="password">
                 <img src="/static/img/suo.png" alt="密码">
             </label>
-            <input type="password" placeholder="更换密码" id="mima" ng-model="data.password">
+            <input type="password" placeholder="更换密码" id="password" ng-model="data.password">
         </div>
         <div>
-            <label for="mima">
+            <label for="passwordOne">
                 <img src="/static/img/suo.png" alt="密码">
             </label>
-            <input type="password" placeholder="确认密码" id="mima" ng-model="data.re_password">
+            <input type="password" placeholder="确认密码" id="passwordOne" ng-model="data.re_password">
         </div>
 
         <div>

@@ -1,6 +1,6 @@
 {include file="public/header" /}
-<script src="/static/js/admin/student_list_data.js"></script>
-<body class="gray-bg" ng-app="ranking_admin_student_list_application" ng-controller="ranking_admin_student_list_controller">
+<script src="/static/js/admin/school_list_data.js"></script>
+<body class="gray-bg" ng-app="ranking_admin_school_list_application" ng-controller="ranking_admin_school_list_controller">
 <div class="wrapper wrapper-content animated fadeInRight">
     <!-- Panel Other -->
     <div class="ibox float-e-margins">
@@ -8,6 +8,27 @@
             <h5>学校列表</h5>
         </div>
         <div class="ibox-content">
+            <!--学校添加框开始-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div  class="col-sm-2" style="width: 100px">
+                        <div class="input-group" >
+                            <a href=""><button class="btn btn-outline btn-primary" type="button">添加用户</button></a>
+                        </div>
+                    </div>
+                    <form name="admin_list_sea" class="form-search" method="post" action="">
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <input type="text" id="key" class="form-control" name="key" value="" placeholder="输入需查询的用户名" />
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 搜索</button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--学校添加框结束-->
             <div class="hr-line-dashed"></div>
 
             <div class="example-wrap">
@@ -22,15 +43,15 @@
                             <th>操作</th>
                         </tr>
                         </thead>
-                            <tr class="long-td" ng-repeat="(k, v) in studentArray">
+                            <tr class="long-td" ng-repeat="(k, v) in schoolArray">
                                 <td ng-bind="v.id"></td>
-                                <td ng-bind="v.telephone"></td>
-                                <td ng-bind="v.user_name"></td>
+                                <td ng-bind="v.colleges_name"></td>
+                                <td ng-bind="v.qq_group"></td>
                                 <td ng-bind="v.create_time"></td>
                                 <td>
                                     <div class="btn btn-primary btn-outline btn-xs" ng-click="details(v.id, v.fraction_id);">
                                         <i class="fa fa-paste"></i>
-                                        查看成绩
+                                        管理
                                     </div>
                                 </td>
                             </tr>

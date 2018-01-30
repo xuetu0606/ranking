@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517301393;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517302759;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_login_application">
 
@@ -7,7 +7,7 @@
     <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>「2018考研初试成绩排名系统」</title>
-    <link rel="stylesheet" href="/static/css/Sign.css">
+    <link rel="stylesheet" href="/static/css/sign.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_554500_l5e4l7k9mdpiizfr.css">
     <script src="/static/js/rem.js"></script>
     <script src="/static/js/jquery-3.2.1.min.js"></script>

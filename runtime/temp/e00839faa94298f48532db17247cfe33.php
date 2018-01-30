@@ -1,4 +1,28 @@
-{include file="public/header" /}
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:96:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\school\school_edit.html";i:1517304313;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\header.html";i:1516956621;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo config('WEB_SITE_TITLE'); ?></title>
+    <link href="/static/admin/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/admin/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/admin/css/animate.min.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="/static/admin/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link href="/static/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script src="/static/js/angular.js"></script>
+    <style type="text/css">
+    .long-tr th{
+        text-align: center
+    }
+    .long-td td{
+        text-align: center
+    }
+    </style>
+</head>
 <link rel="stylesheet" type="text/css" href="/static/admin/webupload/webuploader.css">
 <link rel="stylesheet" type="text/css" href="/static/admin/webupload/style.css">
 <style>
@@ -26,12 +50,12 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <form class="form-horizontal" name="userEdit" id="userEdit" method="post" action="{:url('userEdit')}">
+                    <form class="form-horizontal" name="userEdit" id="userEdit" method="post" action="<?php echo url('userEdit'); ?>">
                         <input type="hidden" name="id" value="">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">管理员名称：</label>
                             <div class="input-group col-sm-4">
-                                <input id="username" type="text" class="form-control" name="username" required="" aria-required="true" value="">
+                                <input id="username" type="text" class="form-control" name="username" required="" aria-required="true" value="<?php echo $user['username']; ?>">
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -51,7 +75,7 @@
                                 <input type="hidden" id="data_photo" name="portrait" value="" />
                                 <div id="fileList" class="uploader-list" style="float:right"></div>
                                 <div id="imgPicker" style="float:left">选择头像</div>
-                                <img id="img_data" class="img-circle" height="80px" width="80px" style="float:left;margin-left: 50px;margin-top: -10px;" src="/uploads/face/{$user.portrait}" onerror="this.src='/static/admin/images/head_default.gif'"/>
+                                <img id="img_data" class="img-circle" height="80px" width="80px" style="float:left;margin-left: 50px;margin-top: -10px;" src="/uploads/face/<?php echo $user['portrait']; ?>" onerror="this.src='/static/admin/images/head_default.gif'"/>
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -65,7 +89,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">真实姓名：</label>
                             <div class="input-group col-sm-4">
-                                <input id="real_name" type="text" class="form-control" name="real_name" required="" aria-required="true" value="{$user.real_name}">
+                                <input id="real_name" type="text" class="form-control" name="real_name" required="" aria-required="true" value="<?php echo $user['real_name']; ?>">
 
                             </div>
                         </div>
@@ -74,8 +98,8 @@
                             <label class="col-sm-3 control-label">状&nbsp;态：</label>
                             <div class="col-sm-6">
                                 <div class="radio i-checks">
-                                    <input type="radio" name='status' value="1" {if condition="$user['status'] eq 1 "}checked{/if}/>开启&nbsp;&nbsp;
-                                    <input type="radio" name='status' value="0" {if condition="$user['status'] eq 0 "}checked{/if}/>关闭
+                                    <input type="radio" name='status' value="1" <?php if($user['status'] == 1): ?>checked<?php endif; ?>/>开启&nbsp;&nbsp;
+                                    <input type="radio" name='status' value="0" <?php if($user['status'] == 0): ?>checked<?php endif; ?>/>关闭
                                 </div>
                             </div>
                         </div>
@@ -93,7 +117,23 @@
         </div>
     </div>
 </div>
-{include file="public/footer" /}
+<script src="__JS__/jquery.min.js?v=2.1.4"></script>
+<script src="__JS__/bootstrap.min.js?v=3.3.6"></script>
+<script src="__JS__/content.min.js?v=1.0.0"></script>
+<script src="__JS__/plugins/chosen/chosen.jquery.js"></script>
+<script src="__JS__/plugins/iCheck/icheck.min.js"></script>
+<script src="__JS__/plugins/layer/laydate/laydate.js"></script>
+<script src="__JS__/plugins/switchery/switchery.js"></script><!--IOS开关样式-->
+<script src="__JS__/jquery.form.js"></script>
+<script src="__JS__/layer/layer.js"></script>
+<script src="__JS__/laypage/laypage.js"></script>
+<script src="__JS__/laytpl/laytpl.js"></script>
+<script src="__JS__/lunhui.js"></script>
+<script src="/static/js/angular.js"></script>
+<script src="/static/js/admin/student_list_data.js"></script>
+<script>
+    $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+</script>
 <script type="text/javascript" src="/static/admin/webupload/webuploader.min.js"></script>
 <script type="text/javascript">
     var $list = $('#fileList');
@@ -102,7 +142,7 @@
 
         auto: true,// 选完文件后，是否自动上传。
         swf: '/static/admin/webupload/Uploader.swf',// swf文件路径
-        server: "{:url('Upload/uploadface')}",// 文件接收服务端。
+        server: "<?php echo url('Upload/uploadface'); ?>",// 文件接收服务端。
         duplicate :true,// 重复上传图片，true为可重复false为不可重复
         pick: '#imgPicker',// 选择文件的按钮。可选。
 
@@ -170,7 +210,7 @@
         function complete(data){
             if(data.code==1){
                 layer.msg(data.msg, {icon: 6,time:1500,shade: 0.1}, function(index){
-                    window.location.href="{:url('user/index')}";
+                    window.location.href="<?php echo url('user/index'); ?>";
                 });
             }else{
                 layer.msg(data.msg, {icon: 5,time:1500,shade: 0.1});

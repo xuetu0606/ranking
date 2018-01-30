@@ -109,4 +109,13 @@ class School extends Base{
         );
     }
 
+    /**
+     * 打开修改学校信息页面
+     * @method GET
+     * @return \think\response\View
+     */
+    public function school_edit(){
+        return view();
+    }
+
 }

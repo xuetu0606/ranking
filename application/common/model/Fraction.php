@@ -128,6 +128,7 @@ class Fraction extends Base {
             ->where($parameter_arr)
             ->value("total");
         $where_ranking_arr = [
+            "code" => $parameter_arr["code"],
             "total" => [
                 ">",
                 $user_total

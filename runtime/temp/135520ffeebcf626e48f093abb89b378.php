@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517302759;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517303650;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_login_application">
 
@@ -16,7 +16,6 @@
     <script src="/static/js/function.js"></script>
     <script src="/static/js/index/login-data.js"></script>
 </head>
-
 <body ng-controller="ranking_index_login_controller">
     <div class="center">
         <div>

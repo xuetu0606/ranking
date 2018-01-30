@@ -9,6 +9,7 @@
 namespace app\admin\controller;
 
 use think\Validate;
+use think\Session;
 
 class School extends Base{
 
@@ -107,6 +108,42 @@ class School extends Base{
             "删除成功",
             "删除失败"
         );
+    }
+
+    /**
+     * 打开修改学校信息页面
+     * @method GET
+     * @return \think\response\View
+     */
+    public function school_edit($colleges_id){
+        Session::set("colleges_id", $colleges_id);
+        return view();
+    }
+
+    /**
+     * 获取修改页面的数据
+     * @method GET
+     * @return mixed|string json
+     */
+    public function get_school_edit_info(){
+        $colleges_id = Session::get("colleges_id");
+        $where_arr = [
+            "id" => $colleges_id
+        ];
+        $colleges_info_arr = model("colleges")
+            ->selectFacultyByName($where_arr);
+        return $this->response_return_json(
+            $colleges_info_arr,
+            $colleges_info_arr,
+            "获取成功",
+            "获取失败"
+        );
+    }
+
+    public function school_edit_data(){
+        $result = result();
+        dump($result->post());
+        dump(Session::get("colleges_id"));
     }
 
 }

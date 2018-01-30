@@ -168,8 +168,9 @@ m.controller(
              * 上拉分页
              * @method 自动
              */
-             $(window).scroll(function () {
-                var a = $(window).scrollTop();
+
+            $(window).scroll(function () {
+                var a = $(window).scrollTop()+50;
                 var b = $(document).height();
                 var c = $(window).height();
                 if (a >= b - c) {

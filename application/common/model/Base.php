@@ -44,4 +44,8 @@ class Base extends Model{
         return $password_str;
     }
 
+    public function updateInfo(){
+        
+    }
+
 }

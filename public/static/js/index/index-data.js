@@ -64,8 +64,8 @@ m.controller(
              * 到底之后调用获取数据的方法
              * @method 自动调用
              */
-             $(window).scroll(function () {
-                var a = $(window).scrollTop();
+            $(window).scroll(function () {
+                var a = $(window).scrollTop()+50;
                 var b = $(document).height();
                 var c = $(window).height();
                 if (a >= b - c) {

@@ -14,7 +14,7 @@ input {
 }
 .center > div:nth-of-type(1) {
   padding-top: 50px;
-  width: 120px;
+  width: 2.4rem;
   margin: 0 auto;
   margin-bottom: 50px;
 }

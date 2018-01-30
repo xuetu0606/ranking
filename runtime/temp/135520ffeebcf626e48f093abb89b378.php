@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517208217;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517301393;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_login_application">
 
@@ -23,6 +23,9 @@
             <img src="/static/img/header.jpg" alt="">
         </div>
         <div>
+            <p>《由于复试通知较晚，为了更加准确的了解到目前自己所处的位置，为自己后期规划做好准备，同时也是保证复试的公平性，圆大家名校梦。名次实时更新，大家转发至相关考研群》</p>
+        </div>
+        <div>
             <label for="number">
                 <img src="/static/img/ren.png" alt="">
             </label>
@@ -38,7 +41,6 @@
         <div>
             <input type="submit" value="登录" ng-click="login();">
         </div>
-         <!-- 123123 -->
         <div>
             <a href="/index/index/register.html">点击注册</a>
             <a href="/index/index/forget.html">忘记密码?</a>

@@ -65,9 +65,9 @@ m.controller(
              * @method 自动调用
              */
              $(window).scroll(function () {
-                let a = $(window).scrollTop();
-                let b = $(document).height();
-                let c = $(window).height();
+                var a = $(window).scrollTop();
+                var b = $(document).height();
+                var c = $(window).height();
                 if (a >= b - c) {
                     //上面的代码是判断滚动条滑到底部的代码
                     //alert("滑到底部了");

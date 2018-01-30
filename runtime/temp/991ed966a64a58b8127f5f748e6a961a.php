@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\login.html";i:1505280618;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\login.html";i:1517277422;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +49,7 @@
     </div>
     <div class="signup-footer">
         <div class="pull-left" style="color:#fff">
-            &copy; 2016 轮回后台管理系统 All Rights Reserved. 
+            &copy; 轮回后台管理系统 All Rights Reserved.
         </div>
     </div>
 </div>

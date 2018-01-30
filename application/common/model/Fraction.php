@@ -75,12 +75,17 @@ class Fraction extends Base {
                 "user_name," .
                 "telephone," .
                 "total," .
-                "code"
+                "code," .
+                "wechat," .
+                "qq," .
+                "colleges_id," .
+                "faculty_id," .
+                "major_id"
             )
             ->where($parameter_arr)
             ->order("total desc")
             ->paginate(15);
-        $fraction_arrs = $this->forToArray($fraction_objs);
+        $fraction_arrs = $fraction_objs->toArray();
         return $fraction_arrs;
     }
 
@@ -133,6 +138,20 @@ class Fraction extends Base {
             ->count();
         ;
         return $user_pre_ranking;
+    }
+
+    /**
+     * 获取全部专业课code
+     * @method 调用
+     * @return mixed array
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function getCodeList(){
+        $code_objs = $this->distinct(true)->field("code")->select();
+        $code_arrs = $this->forToArray($code_objs);
+        return $code_arrs;
     }
 
 }

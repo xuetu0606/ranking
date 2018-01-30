@@ -224,8 +224,12 @@ class Index extends Base {
      * @method GET
      * @return mixed|string json
      */
-    public function get_faculty_data(){
-        $parameter_arr["colleges_id"] = $this->get_user_colleges();
+    public function get_faculty_data($colleges_id = false){
+        if ($colleges_id){
+            $parameter_arr["colleges_id"] = $colleges_id;
+        }else{
+            $parameter_arr["colleges_id"] = $this->get_user_colleges();
+        }
         $faculty_arr = model("faculty")->getChoiceList($parameter_arr);
         return $this->response_return_json(
             $faculty_arr,
@@ -665,8 +669,7 @@ class Index extends Base {
             );
         }
 
-
-        $query_creaet_boolean = model("colleges")->createColleges($where_arr);
+        $query_creaet_boolean = model("colleges")->createColleges($request_arr);
         return $this->response_return_json(
             $query_creaet_boolean,
             $query_creaet_boolean,

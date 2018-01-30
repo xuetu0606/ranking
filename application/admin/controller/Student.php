@@ -55,7 +55,7 @@ class Student extends Base{
     }
 
     /**
-     * 获取当前用户的成绩信息
+     * 打开当前用户信息的页面
      * @method POST
      * @return mixed|string json
      */
@@ -71,14 +71,35 @@ class Student extends Base{
         }
         $request_arr = $request->post();
 
-        $achievement_details_arr = model("achievement")
+        $achievement_details_data = model("achievement")
             ->selectUserAchievementInfo($request_arr);
+        $achievement_details_arr = $this
+            ->handle_achievement_details_arr($achievement_details_data);
         return $this->response_return_json(
             $achievement_details_arr,
             $achievement_details_arr,
             "获取成功",
             "获取失败"
         );
+    }
+
+    /**
+     * 处理课程数组,
+     * 填充进课程名称
+     * @method 调用
+     * @param $parameter_arr 传入课程数组
+     * @return mixed array 处理后的数组
+     */
+    public function handle_achievement_details_arr($parameter_arr){
+        foreach ($parameter_arr as $key => $value){
+            $where_arr = [
+                "id" => $value["curriculum_id"],
+            ];
+            $curriculum_name = model("curriculum")
+                ->getCurriculumNameById($where_arr);
+            $parameter_arr[$key]["curriculum_name"] = $curriculum_name;
+        }
+        return $parameter_arr;
     }
 
 }

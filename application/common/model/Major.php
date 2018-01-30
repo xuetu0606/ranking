@@ -28,10 +28,11 @@ class Major extends Base {
             ->field(
                 "id," .
                 "major_name," .
-                "faculty_id"
+                "faculty_id," .
+                "create_time"
             )
             ->where($parameter_arr)
-            ->paginate(10);
+            ->select();
         $major_arrs = $this->forToArray($major_objs);
         return $major_arrs;
     }
@@ -72,4 +73,31 @@ class Major extends Base {
         }
         return $major_info_boolean;
     }
+
+    /**
+     * 删除一个专业
+     * @method 调用
+     * @param $parameter_arr
+     * @return int
+     */
+    public function deleteMajor($parameter_arr){
+        $query_boolean = $this
+            ->where($parameter_arr)
+            ->delete();
+        return $query_boolean;
+    }
+
+    /**
+     * 查询当前学校名字
+     * @method 调用
+     * @param $parameter_arr
+     * @return mixed string 学校名
+     */
+    public function getNameById($parameter_arr){
+        $major_name = $this
+            ->where($parameter_arr)
+            ->value("major_name");
+        return $major_name;
+    }
+
 }

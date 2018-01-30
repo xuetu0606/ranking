@@ -1,0 +1,60 @@
+{include file="public/header" /}
+<script src="/static/js/admin/student_list_data.js"></script>
+<body class="gray-bg" ng-app="ranking_admin_student_list_application" ng-controller="ranking_admin_student_list_controller">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>用户列表</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="hr-line-dashed"></div>
+
+            <div class="example-wrap">
+                <div class="example">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr class="long-tr">
+                            <th>科目</th>
+                            <th>分数</th>
+                        </tr>
+                        </thead>
+                        <tr class="long-td" ng-repeat="(k, v) in studentArray">
+                            <td ng-bind="v.id"></td>
+                            <td ng-bind="v.telephone"></td>
+                            <td ng-bind="v.user_name"></td>
+                            <td ng-bind="v.code"></td>
+                            <td ng-bind="v.total"></td>
+                            <td ng-bind="v.create_time"></td>
+                            <td>
+                                <div class="btn btn-primary btn-outline btn-xs" ng-click="details(v.id, v.fraction_id);">
+                                    <i class="fa fa-paste"></i>
+                                    查看成绩
+                                </div>
+                            </td>
+                        </tr>
+                        <tbody id="list-content"></tbody>
+                    </table>
+                    <div id="AjaxPage" style=" text-align: right;"></div>
+                    <div id="allpage" style=" text-align: right;"></div>
+                </div>
+            </div>
+            <!-- End Example Pagination -->
+        </div>
+    </div>
+</div>
+<!-- End Panel Other -->
+</div>
+
+<!-- 加载动画 -->
+<div class="spiner-example" ng-show="spiner_example">
+    <div class="sk-spinner sk-spinner-three-bounce">
+        <div class="sk-bounce1"></div>
+        <div class="sk-bounce2"></div>
+        <div class="sk-bounce3"></div>
+    </div>
+</div>
+
+{include file="public/footer" /}
+</body>
+</html>

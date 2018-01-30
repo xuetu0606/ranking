@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:96:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\school\school_list.html";i:1517242228;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\header.html";i:1516956621;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:97:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\achievement\ranking.html";i:1517282762;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\header.html";i:1516956621;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,66 +24,53 @@
     </style>
 </head>
 <script src="/static/js/function.js"></script>
-<script src="/static/js/admin/school_list_data.js"></script>
-<body class="gray-bg" ng-app="ranking_admin_school_list_application" ng-controller="ranking_admin_school_list_controller">
+<script src="/static/js/admin/ranking_data.js"></script>
+<body class="gray-bg" ng-app="ranking_admin_ranking_application" ng-controller="ranking_admin_ranking_controller">
 <div class="wrapper wrapper-content animated fadeInRight">
     <!-- Panel Other -->
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>学校列表</h5>
+            <h5>排名查询</h5>
         </div>
         <div class="ibox-content">
-            <!--学校添加框开始-->
-            <div class="row">
-                <div class="col-sm-16">
-                    <div role="form" class="form-inline">
-                        <div class="form-group">
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" placeholder="学校名称" ng-model="colleges.colleges_name">
-                            </div>
-                            <div class="input-group col-md-4">
-                                <input type="text" class="form-control" placeholder="交流群号" ng-model="colleges.qq_group">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-primary" ng-click="submitCollegesInfo();">
-                                        添加
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">专业课代码</label>
+                <div class="col-sm-4">
+                    <select class="form-control m-b" name="account" ng-model="data.code" ng-change="monitorCode();">
+                        <option value="">请选择</option>
+                        <option ng-repeat="(k, v) in code_arr" value="{{v.code}}" ng-bind="v.code"></option>
+                    </select>
                 </div>
             </div>
-            <!--学校添加框结束-->
-            <div class="hr-line-dashed"></div>
-
             <div class="example-wrap">
                 <div class="example">
                     <table class="table table-bordered table-hover">
                         <thead>
                         <tr class="long-tr">
-                            <th>ID</th>
-                            <th>学校名</th>
-                            <th>QQ群</th>
-                            <th>添加时间</th>
-                            <th>操作</th>
+                            <th>名次</th>
+                            <th>姓名</th>
+                            <th>微信</th>
+                            <th>QQ</th>
+                            <th>学校</th>
+                            <th>院系所</th>
+                            <th>专业</th>
+                            <th>专业课代码</th>
+                            <th>总分</th>
                         </tr>
                         </thead>
-                            <tr class="long-td" ng-repeat="(k, v) in schoolArray">
-                                <td ng-bind="v.id"></td>
-                                <td ng-bind="v.colleges_name"></td>
-                                <td ng-bind="v.qq_group"></td>
-                                <td ng-bind="v.create_time"></td>
-                                <td>
-                                    <a href="/admin/faculty/faculty_list/colleges_id/{{v.id}}" class="btn btn-primary btn-outline btn-xs">
-                                        <i class="fa fa-paste"></i>
-                                        管理院系所
-                                    </a>
-                                    <a ng-click="deleteColleges(v.id);" class="btn btn-danger btn-outline btn-xs">
-                                        <i class="fa fa-trash-o"></i>
-                                        删除
-                                    </a>
-                                </td>
-                            </tr>
+                        <tr class="long-td" ng-repeat="(k, v) in ranking_arr">
+                            <td ng-bind="'第'+(k+1)+'名'"></td>
+                            <td ng-bind="v.user_name"></td>
+                            <td ng-bind="v.wechat"></td>
+                            <td ng-bind="v.qq"></td>
+                            <td ng-bind="v.colleges_name"></td>
+                            <td ng-bind="v.faculty_name"></td>
+                            <td ng-bind="v.major_name"></td>
+                            <td ng-bind="v.code"></td>
+                            <td ng-bind="v.total"></td>
+                        </tr>
                         <tbody id="list-content"></tbody>
                     </table>
                     <div id="AjaxPage" style=" text-align: right;"></div>

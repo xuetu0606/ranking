@@ -46,6 +46,7 @@ class Achievement extends Base {
 
     /**
      * 查询当前用户的成绩信息
+     * @method 调用
      * @param $parameter_arr 课程id 用户id
      * @return array|false|\PDOStatement|string|\think\Model 成绩信息|false
      * @throws \think\db\exception\DataNotFoundException
@@ -54,10 +55,17 @@ class Achievement extends Base {
      */
     public function selectUserAchievementInfo($parameter_arr){
         $achievement_info_obj = $this
+            ->field(
+                "id," .
+                "user_id," .
+                "fraction_id," .
+                "curriculum_id," .
+                "fraction"
+            )
             ->where($parameter_arr)
-            ->find();
+            ->select();
         if($achievement_info_obj){
-            $achievement_info_arr = $achievement_info_obj->toArray();
+            $achievement_info_arr = $this->forToArray($achievement_info_obj);
             return $achievement_info_arr;
         }
         return $achievement_info_obj;

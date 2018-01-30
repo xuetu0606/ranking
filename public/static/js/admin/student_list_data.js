@@ -1,3 +1,9 @@
+/**
+ * 学员页面js管理
+ * @project 2018考研初试排名查询系统
+ * @author 冰华
+ * @since 2018-1-29 23:16:11
+ */
 var m = angular.module("ranking_admin_student_list_application", []);
 m.controller(
     "ranking_admin_student_list_controller",
@@ -108,27 +114,14 @@ m.controller(
                     data
                 ).then(
                     function (result){
-                        result_obj = result.data.data;
-console.log();
-return false;
+                        var result_obj = result.data.data;
+                        var str = get_html(result_obj);
                         //页面层
                         layer.open({
                             type: 1,
                             skin: 'layui-layer-rim', //加上边框
                             area: ['420px', '240px'], //宽高
-                            content:
-                            "<table class=\"table table-bordered table-hover\">\n" +
-                            "    <thead>\n" +
-                            "    <tr class=\"long-tr\">\n" +
-                            "        <th>科目</th>\n" +
-                            "        <th>分数</th>\n" +
-                            "    </tr>\n" +
-                            "    </thead>\n" +
-                            "        <tr class=\"long-td\">\n" +
-                            "            <td></td>\n" +
-                            "            <td></td>\n" +
-                            "        </tr>\n" +
-                            "</table>"
+                            content:str
                         });
                     },
                     function (){
@@ -145,6 +138,26 @@ return false;
                     }
                 );
 
+            };
+
+            function get_html(data){
+                var str = "<table class=\"table table-bordered table-hover\">\n" +
+                    "    <thead>\n" +
+                    "    <tr class=\"long-tr\">\n" +
+                    "        <th>科目</th>\n" +
+                    "        <th>分数</th>\n" +
+                    "    </tr>\n" +
+                    "    </thead>\n" ;
+                for (var i=0; i < data.length; i++) {
+                    str+=
+                        "        <tr class=\"long-td\">\n" +
+                        "            <td>"+data[i].curriculum_name+"</td>\n" +
+                        "            <td>"+data[i].fraction+"</td>\n" +
+                        "        </tr>\n" ;
+                }
+                str+=
+                    "</table>";
+                return str;
             }
 
         }

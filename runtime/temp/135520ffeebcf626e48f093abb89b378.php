@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517206032;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\login.html";i:1517208217;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_login_application">
 
@@ -29,15 +29,16 @@
             <input type="text" placeholder="手机号" id="number" ng-model="data.telephone">
         </div>
         <div>
-            <label for="mima">
+            <label for="password">
                 <img src="/static/img/suo.png" alt="">
             </label>
-            <input type="password" placeholder="密码" id="mima" ng-model="data.password">
+            <input type="password" placeholder="密码" id="password" ng-model="data.password">
         </div>
 
         <div>
             <input type="submit" value="登录" ng-click="login();">
         </div>
+         <!-- 123123 -->
         <div>
             <a href="/index/index/register.html">点击注册</a>
             <a href="/index/index/forget.html">忘记密码?</a>

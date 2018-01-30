@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:92:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\register.html";i:1517206757;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:92:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\register.html";i:1517208499;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_register_application">
 
@@ -29,19 +29,19 @@
             <input type="text" placeholder="手机号" id="number" ng-model="data.telephone">
         </div>
         <div>
-            <label for="mima1">
+            <label for="verify">
                 <img src="/static/img/suo.png" alt="验证码">
             </label>
-            <input type="text" placeholder="请输入验证码" id="mima1" ng-model="data.code">
+            <input type="text" placeholder="请输入验证码" id="verify" ng-model="data.code">
             <div>
                 <img id="captcha_src" src="/captcha.html" onclick="javascript:this.src='/captcha.html?tm='+Math.random();">
             </div>
         </div>
         <div>
-            <label for="mima2">
+            <label for="password">
                 <img src="/static/img/suo.png" alt="密码">
             </label>
-            <input type="password" placeholder="密码" id="mima2" ng-model="data.password">
+            <input type="password" placeholder="密码" id="password" ng-model="data.password">
         </div>
         <div>
             <input type="submit" value="注册" ng-click="register();">

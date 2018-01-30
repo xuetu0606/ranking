@@ -30,8 +30,18 @@ m.controller(
                             return false;
                         }
                         if (respone_obj.code == 0){
-                            document.getElementById("captcha_src").src =
-                                "/captcha.html?tm="+Math.random();
+                            layer.msg(
+                                respone_obj.msg,
+                                {
+                                    anim : 2,
+                                    time : 900
+                                },
+                                function () {
+                                    document.getElementById("captcha_src").src =
+                                        "/captcha.html?tm="+Math.random();
+                                }
+                            );
+                            return false;
                         }
                     },
                     function () {

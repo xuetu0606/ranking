@@ -29,7 +29,9 @@ class Colleges extends Base {
         $colleges_objs = $this
             ->field(
                 "id," .
-                "colleges_name"
+                "colleges_name," .
+                "qq_group," .
+                "create_time"
             )
             ->where($where_arr)
             ->paginate(15);

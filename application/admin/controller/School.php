@@ -19,6 +19,11 @@ class School extends Base{
         return view();
     }
 
+    /**
+     * 获取学校信息
+     * @method GET
+     * @return mixed|string json
+     */
     public function school_list_data(){
         $request = request();
         $request_arr = $request->post();

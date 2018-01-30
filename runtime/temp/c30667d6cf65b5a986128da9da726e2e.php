@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517295510;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517295798;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_choice_application">
 
@@ -32,7 +32,7 @@
         <div class="add">
             <div class="cell-item">
                 <div class="cell-left">学校：</div>
-                <div>清华大学</div>
+                <div class="mySchool">清华大学</div>
             </div>
             <div class="cell-item">
                 <div class="cell-left">姓名：</div>

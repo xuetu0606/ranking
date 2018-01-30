@@ -44,8 +44,15 @@ class Base extends Model{
         return $password_str;
     }
 
-    public function updateInfo(){
-        
+    public function updateInfo($parameter_str, $id){
+        $where_arr = [
+            "id" => $id
+        ];
+        $query_boolean = $this
+            ->where($where_arr)
+            ->update($parameter_str)
+        ;
+        return $query_boolean;
     }
 
 }

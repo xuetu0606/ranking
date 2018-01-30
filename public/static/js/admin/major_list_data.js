@@ -25,7 +25,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            // window.location.reload(true);
+                            window.location.reload(true);
                         }
                     );
                 }
@@ -98,7 +98,7 @@ m.controller(
                                 time : 900
                             },
                             function (){
-                                //window.location.reload(true);
+                                window.location.reload(true);
                             }
                         );
                     }

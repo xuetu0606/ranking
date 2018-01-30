@@ -52,7 +52,7 @@ m.controller(
                         "/faculty_id/"+$scope.data.faculty_id
                     ).then(
                         function (result){
-                            $scope.major_arr = result.data.data.data;
+                            $scope.major_arr = result.data.data;
                         },
                         function (){
                             layer.msg(

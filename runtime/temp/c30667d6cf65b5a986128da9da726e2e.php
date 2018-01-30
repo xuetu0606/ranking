@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517206032;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517292903;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_choice_application">
 
@@ -66,9 +66,12 @@
             <div>
                 <select class="cell-select" name="" ng-options="v.id as v.major_name for v in major_arr" ng-model="data.major_id">
                     <option value="">请选择专业</option>
-
                 </select>
             </div>
+
+        </div>
+        <div class="addition">
+            <a href="/index/index/choice/colleges_id/">如果没有您的专业，点击添加</a>
         </div>
         <div class="none">
             <div class="biaoti">
@@ -81,7 +84,6 @@
                         <input type="text" class="cell-input curriculum" id="{{v.id}}" name="{{v.id}}" placeholder="请输入您的成绩" autocomplete="off">
                     </div>
                 </div>
-
                 <div class="cell-item">
                     <div class="cell-left">专业科目代码：</div>
                     <div class="cell-right">

@@ -25,31 +25,17 @@ m.controller(
                     function (result){
                         $scope.data = result;
                         var respone_obj = result.data;
-                        layer.msg(
-                            respone_obj.msg,
-                            {
-                                anim : 2,
-                                time : 900
-                            },
-                            function (){
-                                if (page != 1){
-                                    // 循环获取到的数据添加到页面数组里面
-                                    angular.forEach($scope.data.data.data.data, function (value, key) {
-                                        $scope.studentArray.push(value);
-                                    });
-                                }else{
-                                    $scope.studentArray = $scope.data.data.data.data;
-                                }
-                                if ($scope.data.data.data.last_page <= 1){
-                                    $scope.spiner_example = false;
-                                }
-                                // 把数据拉回到 $scope 的作用域里面
-                                $scope.$apply(function(){
-                                    $scope.studentArray;
-                                    $scope.spiner_example;
-                                });
-                            }
-                        );
+                        if (page != 1){
+                            // 循环获取到的数据添加到页面数组里面
+                            angular.forEach($scope.data.data.data.data, function (value, key) {
+                                $scope.studentArray.push(value);
+                            });
+                        }else{
+                            $scope.studentArray = $scope.data.data.data.data;
+                        }
+                        if ($scope.data.data.data.last_page <= 1){
+                            $scope.spiner_example = false;
+                        }
                     },
                     function (){
                         layer.msg(

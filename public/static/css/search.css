@@ -61,12 +61,6 @@
     font-size: 0.32rem;
 }
 
-
-.kong {
-    width: 100%;
-    height: 0.9rem;
-}
-
 .a {
     overflow: auto;
     /* height: 11.1rem; */
@@ -228,3 +222,4 @@ input {
     -webkit-appearance: none;
     border-radius: 0;
 }
+

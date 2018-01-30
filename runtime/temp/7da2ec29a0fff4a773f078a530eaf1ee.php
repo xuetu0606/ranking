@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\workingspace\ranking\public/../application/index\view\index\index.html";i:1517322948;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\workingspace\ranking\public/../application/index\view\index\index.html";i:1517326592;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_index_application">
 
@@ -31,7 +31,7 @@
     </div>
     <div class="a">
         <div class="center" ng-repeat="v in collegesArray">
-            <a href="/index/index/choice/colleges_id/{{v.id}}.html"> 
+            <a href="/index/index/choice/colleges_id/{{v.id}}.html">
                 <p ng-bind="v.colleges_name">
                 </p>
                 <i class="iconfont icon-weibiaoti34"></i>
@@ -50,9 +50,6 @@
             正在拼命加载中~
         </div>
     </div>
-    <div class="kong">
-    </div>
-    
     <script>
         $(function () {
             $('.isearch .ssearch').click(function () {

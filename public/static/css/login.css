@@ -17,9 +17,11 @@ input {
 
 .center>div:nth-of-type(1) {
     padding-top: 50px;
-    width: 2.4rem;
+    /* width: 2.4rem; */
     margin: 0 auto;
     margin-bottom: 50px;
+    font-size: 0.36rem;
+    text-align: center;
 }
 
 .center>div:nth-of-type(1)>img {
@@ -137,7 +139,3 @@ input {
 .center>div:nth-of-type(6)>a:nth-of-type(2) {
     float: right;
 }
-
-
-
-

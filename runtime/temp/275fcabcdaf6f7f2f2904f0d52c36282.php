@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\workingspace\ranking\public/../application/index\view\index\login.html";i:1517304303;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\workingspace\ranking\public/../application/index\view\index\login.html";i:1517323735;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_login_application">
 
@@ -7,7 +7,7 @@
     <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>「2018考研初试成绩排名系统」</title>
-    <link rel="stylesheet" href="/static/css/sign.css">
+    <link rel="stylesheet" href="/static/css/login.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_554500_l5e4l7k9mdpiizfr.css">
     <script src="/static/js/rem.js"></script>
     <script src="/static/js/jquery-3.2.1.min.js"></script>
@@ -16,14 +16,14 @@
     <script src="/static/js/function.js"></script>
     <script src="/static/js/index/login-data.js"></script>
 </head>
-<!---->
+
 <body ng-controller="ranking_index_login_controller">
     <div class="center">
         <div>
-            <img src="/static/img/header.jpg" alt="">
+            2018年考研初试成绩查询排名
         </div>
         <div>
-            <p>《由于复试通知较晚，为了更加准确的了解到目前自己所处的位置，为自己后期规划做好准备，同时也是保证复试的公平性，圆大家名校梦。名次实时更新，大家转发至相关考研群》</p>
+            <p>请牢记登陆密码，准确填写相关信息，才能够查询到准确的成绩排名</p>
         </div>
         <div>
             <label for="number">

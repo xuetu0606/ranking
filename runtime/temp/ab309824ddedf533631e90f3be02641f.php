@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\workingspace\ranking\public/../application/index\view\index\ranking.html";i:1517331681;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\workingspace\ranking\public/../application/index\view\index\ranking.html";i:1517333797;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_ranking_application">
 
@@ -25,10 +25,18 @@
         </div>
     </div>
     <div class="kong">
+
     </div>
     <div class="center" id="paihang">
         <div class="flock">
             <p>点击右上角分享到考研群，或发送至好友，更多人登陆会使排名成绩更准确</p>
+        </div>
+        <div class="number">
+            <p>
+                <span>
+                    <span>**</span>大学<span>**</span>专业复试交流群</span>
+                <span>1104898767</span>
+            </p>
         </div>
         <div class="phbot">
             <div class="phlist" ng-repeat="(k, v) in rankingArray">

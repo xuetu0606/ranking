@@ -200,3 +200,23 @@
 .footer>div>div>a>div:nth-of-type(2) {
     text-align: center;
 }
+
+.number {
+    padding: 0.2rem 0 0 0;
+}
+
+.number>p {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.number>p >span:nth-of-type(1) {
+    float: left;
+    font-size: 0.28rem;
+}
+
+.number>p >span:nth-of-type(2) {
+    float: right;
+    font-size: 0.28rem;
+}

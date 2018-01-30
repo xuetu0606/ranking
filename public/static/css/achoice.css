@@ -46,7 +46,7 @@ input {
     height: 1rem;
 }
 
-.abc {
+.message {
     background: #F5F5F5;
     width: 100%;
     margin-top: 1rem;
@@ -54,16 +54,16 @@ input {
     min-height: 100%;
 }
 
-.abc .add {
+.message .add {
     width: 100%;
     background: #fff;
 }
 
-.abc {
+.message {
     margin-bottom: 0.35rem;
 }
 
-.abc .add>div {
+.message .add>div {
     width: 97.3%;
     height: 1rem;
     border-bottom: 1px solid #cccccc;
@@ -73,7 +73,7 @@ input {
     overflow: hidden;
 }
 
-.abc .add>div .cell-left {
+.message .add>div .cell-left {
     color: #333;
     font-size: 0.32rem;
     white-space: nowrap;
@@ -87,7 +87,7 @@ input {
     align-items: center;
 }
 
-.abc .add>div .cell-right {
+.message .add>div .cell-right {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -112,7 +112,7 @@ input {
     justify-content: flex-end;
 }
 
-.abc .add>div .cell-right input {
+.message .add>div .cell-right input {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -135,13 +135,13 @@ input {
     outline: none;
 }
 
-.ade {
+.for {
     width: 100%;
     background: #fff;
     margin-bottom: 0.35rem;
 }
 
-.ade>div {
+.for>div {
     width: 97.3%;
     height: 1rem;
     border-bottom: 1px solid #cccccc;
@@ -151,7 +151,7 @@ input {
     overflow: hidden;
 }
 
-.ade>div .cell-left {
+.for>div .cell-left {
     color: #333;
     font-size: 0.32rem;
     white-space: nowrap;
@@ -165,7 +165,7 @@ input {
     align-items: center;
 }
 
-.ade>div .cell-right {
+.for>div .cell-right {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -190,7 +190,7 @@ input {
     justify-content: flex-end;
 }
 
-.ade>div .cell-right input {
+.for>div .cell-right input {
     text-align: right;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -286,4 +286,8 @@ select {
     color: #555;
     padding-right: 0.3rem;
     margin-top: 0.2rem;
+}
+
+.mySchool{
+    line-height: 1rem;
 }

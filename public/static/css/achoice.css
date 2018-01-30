@@ -57,6 +57,9 @@ input {
 .abc .add {
     width: 100%;
     background: #fff;
+}
+
+.abc {
     margin-bottom: 0.35rem;
 }
 
@@ -271,4 +274,15 @@ select {
     background: #fff;
     /*加padding防止文字覆盖*/
     padding-right: 14px;
+}
+
+.addition {
+    font-size: 0.28rem;
+    text-align: right;
+}
+
+.addition>a {
+    text-decoration: none;
+    color: #555;
+    padding-right: 0.3rem;
 }

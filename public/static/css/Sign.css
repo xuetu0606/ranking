@@ -35,6 +35,8 @@ input {
 
 .center>div:nth-of-type(2) p {
     text-align: center;
+    line-height: 0.4rem;
+    letter-spacing: 2px;
 }
 
 .center>div:nth-of-type(3) {

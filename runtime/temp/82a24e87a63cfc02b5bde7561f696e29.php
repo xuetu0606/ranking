@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\input.html";i:1516958844;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\input.html";i:1517294938;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_input_application">
 
@@ -33,6 +33,10 @@
             个人信息
         </div>
         <div class="add">
+            <div class="cell-item">
+                <div class="cell-left">学校：</div>
+                <div>清华大学</div>
+            </div>
             <div class="cell-item">
                 <div class="cell-left">姓名：</div>
                 <div class="cell-right">

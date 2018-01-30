@@ -19,7 +19,7 @@ m.controller(
              * @method 调用
              */
             $http.get(
-                "/admin/school/school_list_data.html?page="
+                "/admin/school/get_school_edit_info.html"
             ).then(
                 function (result){
                     $scope.data = result;
@@ -32,7 +32,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            window.location.reload(true);
+                            //window.location.reload(true);
                         }
                     );
                 }

@@ -131,7 +131,7 @@ class School extends Base{
             "id" => $colleges_id
         ];
         $colleges_info_arr = model("colleges")
-            ->selectFacultyByName($where_arr);
+            ->getUserCollegesInfo($where_arr);
         return $this->response_return_json(
             $colleges_info_arr,
             $colleges_info_arr,

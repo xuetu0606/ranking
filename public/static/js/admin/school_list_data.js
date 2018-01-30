@@ -167,6 +167,14 @@ m.controller(
                 );
             };
 
+            /**
+             * 修改学校
+             * 弹出层
+             */
+            $scope.editColleges = function (id){
+                window.location.href = "";
+            };
+
         }
     ]
 );

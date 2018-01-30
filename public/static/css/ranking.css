@@ -16,6 +16,7 @@
 .header>div:nth-of-type(1)>p {
     text-align: center;
     line-height: 1rem;
+    font-size: 0.32rem;
 }
 
 .header>div:nth-of-type(2) {
@@ -99,7 +100,7 @@
     font-size: 0.32rem;
     margin-left: 0.2rem;
     display: inline-block;
-    width: 35px;
+    width: 0.7rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -120,4 +121,5 @@
 
 .phbot>p {
     text-align: center;
+    font-size: 0.32rem;
 }

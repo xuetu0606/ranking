@@ -1,3 +1,13 @@
+$(function(){
+    $(".btn").bind("click",function(){
+        var img = $("<img>").attr({
+            src:"/img/logo.png",
+            class:"image"
+        });
+        $(this).after(img);
+    });
+});
+
 /**
  * 成绩录入界面代码
  * @project 2018考研初试排名查询系统

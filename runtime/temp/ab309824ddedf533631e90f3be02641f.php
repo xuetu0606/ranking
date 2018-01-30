@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\workingspace\ranking\public/../application/index\view\index\ranking.html";i:1517323320;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\workingspace\ranking\public/../application/index\view\index\ranking.html";i:1517326244;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_ranking_application">
 
@@ -9,8 +9,8 @@
     <title>我的排名</title>
     <script src="/static/js/rem.js"></script>
     <link rel="stylesheet" href="/static/css/ranking.css">
-    
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_554500_wk0wae7bvtq5xw29.css">
+
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_554500_309od018jepcik9.css">
     <script src="/static/js/jquery-3.2.1.min.js"></script>
     <script src="/static/js/layer/layer.js"></script>
     <script src="/static/js/angular.js"></script>
@@ -50,12 +50,21 @@
     </div>
     <div class="footer">
         <div>
+
             <div>
                 <a href="/index/index/logout.html">
                     <div>
                         <span class="iconfont icon-tuichu"></span>
                     </div>
                     <div>退出</div>
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <div>
+                        <span class="iconfont icon-shuaxin"></span>
+                    </div>
+                    <div>刷新</div>
                 </a>
             </div>
         </div>

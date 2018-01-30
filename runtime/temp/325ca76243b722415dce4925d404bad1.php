@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\workingspace\ranking\public/../application/index\view\index\choice.html";i:1517322720;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\workingspace\ranking\public/../application/index\view\index\choice.html";i:1517325784;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_choice_application">
 
@@ -26,9 +26,6 @@
         </div>
     </div>
     <div class="message">
-        <div class="biaoti">
-            个人信息
-        </div>
         <div class="add">
             <div class="cell-item">
                 <div class="cell-left">学校：</div>

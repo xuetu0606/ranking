@@ -279,6 +279,7 @@ select {
 .addition {
     font-size: 0.28rem;
     text-align: right;
+    margin-top: 0.2rem;
 }
 
 .addition>a {

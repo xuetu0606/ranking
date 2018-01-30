@@ -98,6 +98,11 @@
     line-height: 1rem;
     font-size: 0.32rem;
     margin-left: 0.2rem;
+    display: block;
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .phbot .phlist .score {

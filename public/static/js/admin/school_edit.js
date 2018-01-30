@@ -29,7 +29,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            //window.location.reload(true);
+                            window.location.reload(true);
                         }
                     );
                 }
@@ -54,7 +54,7 @@ m.controller(
                             },
                             function () {
                                 if (respone_obj.code==1){
-                                    //window.location.reload(true);
+                                    window.location.reload(true);
                                     return false;
                                 }
                             }
@@ -68,7 +68,7 @@ m.controller(
                                 time : 900
                             },
                             function (){
-                                //window.location.reload(true);
+                                window.location.reload(true);
                             }
                         );
                     }

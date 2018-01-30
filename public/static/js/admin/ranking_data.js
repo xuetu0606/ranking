@@ -40,10 +40,10 @@ m.controller(
             /**
              * 获取所有的成绩
              */
-            $scope.getRankingList = function (page){
+            $scope.getRankingList = function (page, data){
                 $http.post(
                     "/admin/achievement/get_ranking_data?page="+page,
-                    $scope.data
+                    data
                 ).then(
                     function (result){
                         $scope.ranking_arr = result.data.data.data;
@@ -68,7 +68,7 @@ m.controller(
              * 监控code的变化随时获取新数据
              */
             $scope.monitorCode = function (){
-                $scope.getRankingList($scope.page);
+                $scope.getRankingList($scope.page, $scope.data);
             };
 
             /**
@@ -77,15 +77,18 @@ m.controller(
              * @method 自动调用
              */
             $(window).scroll(function () {
-                var h = $(document).height(); //div可视区域的高度
-                var a = $(document).scrollTop();
-                var b = $(window).height();
-                if (a >= h - b) {
+                var a = $(window).scrollTop()+400;
+                var b = $(document).height();
+                var c = $(window).height();
+                console.log('a==>',a);
+                console.log('b==>',b);
+                console.log('c==>',c);
+                if (a >= b - c) {
                     //上面的代码是判断滚动条滑到底部的代码
                     //alert("滑到底部了");
-                    if ($scope.page < $scope.data.data.data.last_page){
-                        $scope.page = $scope.data.data.data.current_page+1;
-                        $scope.getRankingList($scope.page);
+                    if ($scope.page < $scope.data.last_page){
+                        $scope.page = $scope.data.current_page+1;
+                        $scope.getRankingList($scope.page, $scope.data);
                         return false;
                     }
                     $scope.spiner_example = false;
@@ -103,6 +106,62 @@ m.controller(
                     });
                 }
             });
+
+
+            $scope.details = function (user_id, fraction_id){
+                var data = {
+                    "user_id" : user_id,
+                    "fraction_id" : fraction_id
+                };
+                $http.post(
+                    "/admin/student/get_user_achievement_details",
+                    data
+                ).then(
+                    function (result){
+                        var result_obj = result.data.data;
+                        var str = get_html(result_obj);
+                        //页面层
+                        layer.open({
+                            type: 1,
+                            skin: 'layui-layer-rim', //加上边框
+                            area: ['420px', '240px'], //宽高
+                            content:str
+                        });
+                    },
+                    function (){
+                        layer.msg(
+                            "网络错误,请稍后重试",
+                            {
+                                anim : 2,
+                                time : 900
+                            },
+                            function (){
+                                window.location.reload(true);
+                            }
+                        );
+                    }
+                );
+            };
+
+            function get_html(data){
+                var str = "<table class=\"table table-bordered table-hover\">\n" +
+                    "    <thead>\n" +
+                    "    <tr class=\"long-tr\">\n" +
+                    "        <th>科目</th>\n" +
+                    "        <th>分数</th>\n" +
+                    "    </tr>\n" +
+                    "    </thead>\n" ;
+                for (var i=0; i < data.length; i++) {
+                    str+=
+                        "        <tr class=\"long-td\">\n" +
+                        "            <td>"+data[i].curriculum_name+"</td>\n" +
+                        "            <td>"+data[i].fraction+"</td>\n" +
+                        "        </tr>\n" ;
+                }
+                str+=
+                    "</table>";
+                return str;
+            }
 
         }
     ]

@@ -57,8 +57,7 @@ class Base extends Model{
         ];
         $query_boolean = $this
             ->where($where_arr)
-            ->update($parameter_str)
-        ;
+            ->update($parameter_str);
         return $query_boolean;
     }
 

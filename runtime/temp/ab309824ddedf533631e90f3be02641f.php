@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\workingspace\ranking\public/../application/index\view\index\ranking.html";i:1517326244;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\workingspace\ranking\public/../application/index\view\index\ranking.html";i:1517331681;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_ranking_application">
 
@@ -23,21 +23,12 @@
         <div>
             <p>我的排名</p>
         </div>
-        <div onclick="window.location.href='/index/index/index'">
-            <img src="/static/img/xiangzuo.png" alt="向左">
-        </div>
     </div>
     <div class="kong">
     </div>
     <div class="center" id="paihang">
-        <div class="phtop">
-            <div class="wode">
-                <div class="imgright">
-                    <span ng-bind="user_ranking_info_arr.user_name"></span>
-                    <p ng-bind="'第'+ranking +'名'"></p>
-                </div>
-                <em ng-bind="'总分：'+user_ranking_info_arr.total"></em>
-            </div>
+        <div class="flock">
+            <p>点击右上角分享到考研群，或发送至好友，更多人登陆会使排名成绩更准确</p>
         </div>
         <div class="phbot">
             <div class="phlist" ng-repeat="(k, v) in rankingArray">
@@ -48,9 +39,18 @@
             <p ng-bind="last_str">拼命加载中~</p>
         </div>
     </div>
+    <div class="phtop">
+        <div class="wode">
+            <div class="imgright">
+                <span ng-bind="user_ranking_info_arr.user_name"></span>
+                <p ng-bind="'第'+ranking +'名'"></p>
+            </div>
+            <em ng-bind="'总分：'+user_ranking_info_arr.total"></em>
+        </div>
+    </div>
     <div class="footer">
-        <div>
 
+        <div>
             <div>
                 <a href="/index/index/logout.html">
                     <div>
@@ -60,7 +60,7 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a href="/index/index/ranking.html">
                     <div>
                         <span class="iconfont icon-shuaxin"></span>
                     </div>

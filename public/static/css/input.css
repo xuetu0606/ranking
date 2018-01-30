@@ -23,7 +23,6 @@ body {
     text-align: center;
     line-height: 1rem;
     font-size: 0.32rem;
-
 }
 
 .header>div:nth-of-type(2) {
@@ -300,7 +299,8 @@ body {
     font-size: 0.32rem;
 }
 
-.mySchool{
+.mySchool {
     line-height: 1rem;
     font-size: 0.32rem;
+    color: #333;
 }

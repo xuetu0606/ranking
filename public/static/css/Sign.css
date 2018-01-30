@@ -17,7 +17,7 @@ input {
 
 .center>div:nth-of-type(1) {
     padding-top: 50px;
-    width: 120px;
+    width: 2.4rem;
     margin: 0 auto;
     margin-bottom: 50px;
 }
@@ -28,34 +28,13 @@ input {
 }
 
 .center>div:nth-of-type(2) {
-    width: 90%;
-    height: 1rem;
-    margin: 0 auto;
-    border: 1px solid #f2f2f2;
-    border-bottom: 0;
-    display: flex;
-}
-
-.center>div:nth-of-type(2)>label {
-    display: block;
-    width: 15%;
-    height: 100%;
-    text-align: center;
-    line-height: 1rem;
-}
-
-.center>div:nth-of-type(2)>label img {
-    width: 50%;
-    height: 50%;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.center>div:nth-of-type(2)>input {
     width: 80%;
-    height: 100%;
-    outline: none;
-    border: 0;
+    font-size: 0.24rem;
+    margin: 0 auto 0.5rem;
+}
+
+.center>div:nth-of-type(2) p {
+    text-align: center;
 }
 
 .center>div:nth-of-type(3) {
@@ -63,6 +42,7 @@ input {
     height: 1rem;
     margin: 0 auto;
     border: 1px solid #f2f2f2;
+    border-bottom: 0;
     display: flex;
 }
 
@@ -74,14 +54,14 @@ input {
     line-height: 1rem;
 }
 
-.center>div:nth-of-type(3)>label img {
+.center>div:nth-of-type(4)>label img {
     width: 50%;
     height: 50%;
     display: inline-block;
     vertical-align: middle;
 }
 
-.center>div:nth-of-type(3)>input {
+.center>div:nth-of-type(4)>input {
     width: 80%;
     height: 100%;
     outline: none;
@@ -90,10 +70,40 @@ input {
 
 .center>div:nth-of-type(4) {
     width: 90%;
-    margin: 20px auto;
+    height: 1rem;
+    margin: 0 auto;
+    border: 1px solid #f2f2f2;
+    display: flex;
+}
+
+.center>div:nth-of-type(4)>label {
+    display: block;
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    line-height: 1rem;
+}
+
+.center>div:nth-of-type(4)>label img {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .center>div:nth-of-type(4)>input {
+    width: 80%;
+    height: 100%;
+    outline: none;
+    border: 0;
+}
+
+.center>div:nth-of-type(5) {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.center>div:nth-of-type(5)>input {
     text-align: center;
     line-height: 0.8rem;
     width: 100%;
@@ -106,22 +116,22 @@ input {
     border-radius: 3px;
 }
 
-.center>div:nth-of-type(5) {
+.center>div:nth-of-type(6) {
     width: 5.8rem;
     overflow: hidden;
     margin: 0 auto;
 }
 
-.center>div:nth-of-type(5)>a {
+.center>div:nth-of-type(6)>a {
     font-size: 0.28rem;
     text-decoration: none;
     color: #101010;
 }
 
-.center>div:nth-of-type(5)>a:nth-of-type(1) {
+.center>div:nth-of-type(6)>a:nth-of-type(1) {
     float: left;
 }
 
-.center>div:nth-of-type(5)>a:nth-of-type(2) {
+.center>div:nth-of-type(6)>a:nth-of-type(2) {
     float: right;
 }

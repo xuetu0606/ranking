@@ -1,0 +1,78 @@
+{include file="public/header" /}
+<script src="/static/js/function.js"></script>
+<script src="/static/js/admin/curriculum_list_data.js"></script>
+<body class="gray-bg" ng-app="ranking_admin_curriculum_list_application" ng-controller="ranking_admin_curriculum_list_controller">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>课程列表</h5>
+        </div>
+        <div class="ibox-content">
+            <!--课程添加框开始-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div role="form" class="form-inline">
+                        <div class="form-group">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="form-control" placeholder="课程名称" ng-model="curriculum.curriculum_name">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" ng-click="submitCurriculumInfo();">
+                                        添加
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--课程添加框结束-->
+            <div class="hr-line-dashed"></div>
+
+            <div class="example-wrap">
+                <div class="example">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr class="long-tr">
+                            <th>ID</th>
+                            <th>课程名</th>
+                            <th>添加时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tr class="long-td" ng-repeat="(k, v) in curriculum_arr">
+                            <td ng-bind="v.id"></td>
+                            <td ng-bind="v.curriculum_name"></td>
+                            <td ng-bind="v.create_time"></td>
+                            <td>
+                                <a ng-click="deleteCurriculum(v.id);" class="btn btn-danger btn-outline btn-xs">
+                                    <i class="fa fa-trash-o"></i>
+                                    删除
+                                </a>
+                            </td>
+                        </tr>
+                        <tbody id="list-content"></tbody>
+                    </table>
+                    <div id="AjaxPage" style=" text-align: right;"></div>
+                    <div id="allpage" style=" text-align: right;"></div>
+                </div>
+            </div>
+            <!-- End Example Pagination -->
+        </div>
+    </div>
+</div>
+<!-- End Panel Other -->
+</div>
+
+<!-- 加载动画 -->
+<div class="spiner-example" ng-show="spiner_example">
+    <div class="sk-spinner sk-spinner-three-bounce">
+        <div class="sk-bounce1"></div>
+        <div class="sk-bounce2"></div>
+        <div class="sk-bounce3"></div>
+    </div>
+</div>
+
+{include file="public/footer" /}
+</body>
+</html>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:100:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\error_is_ranking.html";i:1516985951;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:100:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\error_is_ranking.html";i:1517293477;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +16,7 @@
                 time : 1200
             },
             function (){
-                window.location.href = "/index/index/index.html"
+                // window.location.href = "/index/index/index.html"
             }
         );
     </script>

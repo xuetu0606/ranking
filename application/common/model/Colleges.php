@@ -72,6 +72,7 @@ class Colleges extends Base {
      * @return false|int 返回值
      */
     public function createColleges($parameter_arr){
+
         $colleges_info_boolean = $this
             ->data($parameter_arr)
             ->allowField(true)
@@ -82,4 +83,31 @@ class Colleges extends Base {
         }
         return $colleges_info_boolean;
     }
+
+    /**
+     * 删除一个学校
+     * @method 调用
+     * @param $parameter_arr
+     * @return int
+     */
+    public function deleteColleges($parameter_arr){
+        $query_boolean = $this
+            ->where($parameter_arr)
+            ->delete();
+        return $query_boolean;
+    }
+
+    /**
+     * 查询当前学校名字
+     * @method 调用
+     * @param $parameter_arr
+     * @return mixed string 学校名
+     */
+    public function getNameById($parameter_arr){
+        $colleges_name = $this
+            ->where($parameter_arr)
+            ->value("colleges_name");
+        return $colleges_name;
+    }
+
 }

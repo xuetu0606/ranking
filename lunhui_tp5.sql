@@ -294,7 +294,7 @@ INSERT INTO `think_config` VALUES ('2', 'web_site_description', '轮回后台管
 INSERT INTO `think_config` VALUES ('3', 'web_site_keyword', '轮回后台管理系统');
 INSERT INTO `think_config` VALUES ('4', 'web_site_icp', '陇ICP备15002349号-1');
 INSERT INTO `think_config` VALUES ('5', 'web_site_cnzz', '');
-INSERT INTO `think_config` VALUES ('6', 'web_site_copy', 'Copyright © 2017 轮回后台管理系统 All rights reserved.');
+INSERT INTO `think_config` VALUES ('6', 'web_site_copy', 'Copyright © 轮回后台管理系统 All rights reserved.');
 INSERT INTO `think_config` VALUES ('7', 'web_site_close', '1');
 INSERT INTO `think_config` VALUES ('8', 'list_rows', '10');
 INSERT INTO `think_config` VALUES ('9', 'admin_allow_ip', null);

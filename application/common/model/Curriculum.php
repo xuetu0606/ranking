@@ -27,7 +27,8 @@ class Curriculum extends Base {
             ->field(
                 "id," .
                 "curriculum_name," .
-                "major_id"
+                "major_id," .
+                "create_time"
             )
             ->where($parameter_arr)
             ->select();
@@ -44,7 +45,7 @@ class Curriculum extends Base {
     public function saveCurriculumInfo($parameter_arr){
         $curriculum_info_boolean = $this::create($parameter_arr);
         if ($curriculum_info_boolean){
-            $curriculum_info_arr = $this->toArray();
+            $curriculum_info_arr = $curriculum_info_boolean->toArray();
             return $curriculum_info_arr;
         }
         return $curriculum_info_boolean;
@@ -68,6 +69,32 @@ class Curriculum extends Base {
             return $curriculum_arr;
         }
         return $curriculum_obj;
+    }
+
+    /**
+     * 根据课程id查询课程名称
+     * @method 调用
+     * @param $parameter_arr 传入参数
+     * @return mixed string
+     */
+    public function getCurriculumNameById($parameter_arr){
+        $curriculum_name = $this
+            ->where($parameter_arr)
+            ->value("curriculum_name");
+        return $curriculum_name;
+    }
+
+    /**
+     * 删除一个课程
+     * @method 调用
+     * @param $parameter_arr
+     * @return int
+     */
+    public function deleteCurriculum($parameter_arr){
+        $query_boolean = $this
+            ->where($parameter_arr)
+            ->delete();
+        return $query_boolean;
     }
 
 }

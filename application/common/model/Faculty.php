@@ -30,7 +30,8 @@ class Faculty extends Base {
             ->field(
                 "id," .
                 "faculty_name," .
-                "colleges_id"
+                "colleges_id," .
+                "create_time"
             )
             ->where($parameter_arr)
             ->select();
@@ -73,4 +74,31 @@ class Faculty extends Base {
         }
         return $faculty_info_boolean;
     }
+
+    /**
+     * 删除一个院系所
+     * @method 调用
+     * @param $parameter_arr
+     * @return int
+     */
+    public function deleteFaculty($parameter_arr){
+        $query_boolean = $this
+            ->where($parameter_arr)
+            ->delete();
+        return $query_boolean;
+    }
+
+    /**
+     * 查询当前学校名字
+     * @method 调用
+     * @param $parameter_arr
+     * @return mixed string 学校名
+     */
+    public function getNameById($parameter_arr){
+        $faculty_name = $this
+            ->where($parameter_arr)
+            ->value("faculty_name");
+        return $faculty_name;
+    }
+
 }

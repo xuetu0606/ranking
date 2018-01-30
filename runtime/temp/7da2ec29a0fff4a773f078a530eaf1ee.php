@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\workingspace\ranking\public/../application/index\view\index\index.html";i:1517322948;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_index_application">
 

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\workingspace\ranking\public/../application/index\view\index\ranking.html";i:1517323161;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_ranking_application">
 
@@ -44,6 +45,7 @@
                 <span class="num" ng-bind="'第'+ (k+1) +'名'"></span>
                 <span class="score" ng-bind="'总分 : ' + v.total"></span>
             </div>
+
             <p ng-bind="last_str">拼命加载中~</p>
         </div>
     </div>

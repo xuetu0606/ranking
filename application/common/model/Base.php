@@ -44,6 +44,13 @@ class Base extends Model{
         return $password_str;
     }
 
+    /**
+     * 更新学校信息
+     * @method 调用
+     * @param $parameter_str
+     * @param $id
+     * @return $this
+     */
     public function updateInfo($parameter_str, $id){
         $where_arr = [
             "id" => $id

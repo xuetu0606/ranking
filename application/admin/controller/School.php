@@ -140,10 +140,21 @@ class School extends Base{
         );
     }
 
+    /**
+     * 更新学校信息
+     * @method POST
+     * @return mixed|string json
+     */
     public function school_edit_data(){
-        $result = result();
-        dump($result->post());
-        dump(Session::get("colleges_id"));
+        $request = request();
+        $request_arr = $request->post();
+        $query_boolean = mode("colleges")->updateInfo($request_arr);
+        return $this->response_return_json(
+            $query_boolean,
+            $query_boolean,
+            "修改成功",
+            "修改失败"
+        );
     }
 
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:96:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\school\school_edit.html";i:1517317734;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\header.html";i:1516956621;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:96:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\school\school_edit.html";i:1517326871;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\header.html";i:1516956621;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,9 +23,6 @@
     }
     </style>
 </head>
-<link rel="stylesheet" type="text/css" href="/static/admin/webupload/webuploader.css">
-<link rel="stylesheet" type="text/css" href="/static/admin/webupload/style.css">
-<script type="text/javascript" src="/static/admin/webupload/webuploader.min.js"></script>
 <script type="text/javascript" src="/static/js/admin/school_edit.js"></script>
 <body class="gray-bg" ng-app="ranking_admin_school_edit_application" ng-controller="ranking_admin_school_edit_controller">
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -64,7 +61,7 @@
                     <div class="hr-line-dashed"></div>
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-3">
-                            <button class="btn btn-primary" type="button"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-primary" type="button" ng-click="submitCollegesInfo();"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
                             <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
                         </div>
                     </div>

@@ -11,9 +11,6 @@ m.controller(
         "$scope",
         "$http",
         function ($scope, $http){
-            $scope.page = 1;
-            $scope.spiner_example = true;
-            $scope.schoolArray = new Array();
             /**
              * 获取学校数据方法
              * @method 调用
@@ -22,7 +19,7 @@ m.controller(
                 "/admin/school/get_school_edit_info.html"
             ).then(
                 function (result){
-                    $scope.data = result;
+                    $scope.data = result.data.data;
                 },
                 function (){
                     layer.msg(
@@ -39,13 +36,13 @@ m.controller(
             );
 
             /**
-             * 添加学校
+             * 修改学校
              * @method 调用
              */
             $scope.submitCollegesInfo = function (){
                 $http.post(
-                    "/admin/school/add_school_info",
-                    $scope.colleges
+                    "/admin/school/school_edit_data",
+                    $scope.data
                 ).then(
                     function (result){
                         var respone_obj = result.data;
@@ -57,7 +54,7 @@ m.controller(
                             },
                             function () {
                                 if (respone_obj.code==1){
-                                    window.location.reload(true);
+                                    //window.location.reload(true);
                                     return false;
                                 }
                             }
@@ -71,7 +68,7 @@ m.controller(
                                 time : 900
                             },
                             function (){
-                                window.location.reload(true);
+                                //window.location.reload(true);
                             }
                         );
                     }

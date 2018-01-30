@@ -1,7 +1,4 @@
 {include file="public/header" /}
-<link rel="stylesheet" type="text/css" href="/static/admin/webupload/webuploader.css">
-<link rel="stylesheet" type="text/css" href="/static/admin/webupload/style.css">
-<script type="text/javascript" src="/static/admin/webupload/webuploader.min.js"></script>
 <script type="text/javascript" src="/static/js/admin/school_edit.js"></script>
 <body class="gray-bg" ng-app="ranking_admin_school_edit_application" ng-controller="ranking_admin_school_edit_controller">
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -40,7 +37,7 @@
                     <div class="hr-line-dashed"></div>
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-3">
-                            <button class="btn btn-primary" type="button"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-primary" type="button" ng-click="submitCollegesInfo();"><i class="fa fa-save"></i> 保存</button>&nbsp;&nbsp;&nbsp;
                             <a class="btn btn-danger" href="javascript:history.go(-1);"><i class="fa fa-close"></i> 返回</a>
                         </div>
                     </div>
@@ -50,6 +47,6 @@
         </div>
     </div>
 </div>
-{include file="public/footer" /}
+{include file="public/footer"/}
 </body>
 </html>

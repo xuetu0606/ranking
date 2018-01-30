@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\input.html";i:1517294938;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\input.html";i:1517295510;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_input_application">
 
@@ -28,14 +28,14 @@
         </div>
     </div>
 
-    <div class="abc">
+    <div class="message">
         <div class="biaoti">
             个人信息
         </div>
         <div class="add">
             <div class="cell-item">
                 <div class="cell-left">学校：</div>
-                <div>清华大学</div>
+                <div class="mySchool">清华大学</div>
             </div>
             <div class="cell-item">
                 <div class="cell-left">姓名：</div>
@@ -80,7 +80,7 @@
             <div class="biaoti">
                 成绩录入
             </div>
-            <div class="ade">
+            <div class="for">
                 <div>
                     <div class="adf-left">
                         <input type="text" class="adf-input" placeholder="课目" autocomplete="off" ng-model="data.curriculum_arr.curriculum_1.curriculum_name">

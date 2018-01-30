@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517292903;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517295510;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_choice_application">
 
@@ -25,11 +25,15 @@
             <img src="/static/img/xiangzuo.png" alt="向左">
         </div>
     </div>
-    <div class="abc">
+    <div class="message">
         <div class="biaoti">
             个人信息
         </div>
         <div class="add">
+            <div class="cell-item">
+                <div class="cell-left">学校：</div>
+                <div>清华大学</div>
+            </div>
             <div class="cell-item">
                 <div class="cell-left">姓名：</div>
                 <div class="cell-right">
@@ -77,7 +81,7 @@
             <div class="biaoti">
                 成绩录入
             </div>
-            <div class="ade">
+            <div class="for">
                 <div class="cell-item" ng-repeat="(k, v) in curriculum_arr">
                     <div class="cell-left" ng-bind="v.curriculum_name"></div>
                     <div class="cell-right">

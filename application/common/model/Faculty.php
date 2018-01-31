@@ -26,6 +26,9 @@ class Faculty extends Base {
         if (!$parameter_arr){
             return false;
         }
+        if ($parameter_arr && isset($parameter_arr["faculty_name"])){
+            $parameter_arr["faculty_name"]  = ["like","%".$parameter_arr["faculty_name"]."%"];
+        }
         $choice_objs = $this
             ->field(
                 "id," .

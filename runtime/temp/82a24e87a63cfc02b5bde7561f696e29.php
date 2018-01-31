@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\input.html";i:1517357570;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\input.html";i:1517370616;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_input_application">
 
@@ -32,7 +32,8 @@
         <div class="add">
             <div class="cell-item">
                 <div class="cell-left">学校：</div>
-                <div class="mySchool">清华大学</div>
+                <div class="mySchool" ng-bind="colleges_name"></div>
+                <input type="hidden" id="colleges_id" value="<?php echo \think\Request::instance()->get('colleges_id'); ?>"/>
             </div>
             <div class="cell-item">
                 <div class="cell-left">姓名：</div>
@@ -69,25 +70,25 @@
                 <div class="cell-item">
                     <div class="cell-left">政治</div>
                     <div class="cell-right">
-                        <input type="text" class="cell-input curriculum" id="1" name="1" placeholder="请输入您的成绩" autocomplete="off">
+                        <input type="text" class="cell-input curriculum" id="1" name="1" placeholder="请输入您的成绩" autocomplete="off"  ng-model="data.curriculum_arr.curriculum_1.fraction">
                     </div>
                 </div>
                 <div class="cell-item">
                     <div class="cell-left">外语</div>
                     <div class="cell-right">
-                        <input type="text" class="cell-input curriculum" id="2" name="2" placeholder="请输入您的成绩" autocomplete="off">
+                        <input type="text" class="cell-input curriculum" id="2" name="2" placeholder="请输入您的成绩" autocomplete="off"  ng-model="data.curriculum_arr.curriculum_2.fraction">
                     </div>
                 </div>
                 <div class="cell-item">
                     <div class="cell-left">业务课一</div>
                     <div class="cell-right">
-                        <input type="text" class="cell-input curriculum" id="3" name="3" placeholder="请输入您的成绩" autocomplete="off">
+                        <input type="text" class="cell-input curriculum" id="3" name="3" placeholder="请输入您的成绩" autocomplete="off"  ng-model="data.curriculum_arr.curriculum_3.fraction">
                     </div>
                 </div>
                 <div class="cell-item">
                     <div class="cell-left">业务课二</div>
                     <div class="cell-right">
-                        <input type="text" class="cell-input curriculum" id="4" name="5" placeholder="请输入您的成绩" autocomplete="off">
+                        <input type="text" class="cell-input curriculum" id="4" name="5" placeholder="请输入您的成绩" autocomplete="off"  ng-model="data.curriculum_arr.curriculum_4.fraction">
                     </div>
                 </div>
             </div>

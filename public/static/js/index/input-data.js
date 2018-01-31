@@ -22,32 +22,43 @@ m.controller(
                 "code" : "",
                 "curriculum_arr" : {
                     "curriculum_1" : {
-                        "curriculum_name" : "",
+                        "curriculum_name" : "政治",
                         "fraction" : ""
                     },
                     "curriculum_2" : {
-                        "curriculum_name" : "",
+                        "curriculum_name" : "外语",
                         "fraction" : ""
                     },
                     "curriculum_3" : {
-                        "curriculum_name" : "",
+                        "curriculum_name" : "业务课一",
                         "fraction" : ""
                     },
                     "curriculum_4" : {
-                        "curriculum_name" : "",
-                        "fraction" : ""
-                    },
-                    "curriculum_5" : {
-                        "curriculum_name" : "",
-                        "fraction" : ""
-                    },
-                    "curriculum_6" : {
-                        "curriculum_name" : "",
+                        "curriculum_name" : "业务课二",
                         "fraction" : ""
                     }
                 }
             };
-
+            var colleges_id = $("#colleges_id").val();
+            $http.get(
+                "/index/index/get_colleges_name/colleges_id/"+colleges_id
+            ).then(
+                function (result){
+                    $scope.colleges_name = result.data;
+                },
+                function (){
+                    layer.msg(
+                        "网络错误,请稍后重试",
+                        {
+                            anim : 2,
+                            time : 900
+                        },
+                        function (){
+                            //window.location.reload(true);
+                        }
+                    );
+                }
+            );
             $scope.submitAchievement = function (){
                 $http.post(
                     "/index/index/input_data",

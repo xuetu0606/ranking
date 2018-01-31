@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\ranking.html";i:1517367534;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:91:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\ranking.html";i:1517372902;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_ranking_application">
 
@@ -35,7 +35,7 @@
             <p>
                 <span>
                     <span ng-bind="user_ranking_info_arr.colleges_name"></span><span ng-bind="user_ranking_info_arr.major_name"></span>专业复试交流群</span>
-                <span>1104898767</span>
+                <span ng-bind="colleges.qq_group"></span>
             </p>
         </div>
         <div class="phbot">

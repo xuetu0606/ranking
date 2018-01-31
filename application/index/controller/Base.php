@@ -175,10 +175,15 @@ class Base extends Controller {
         ];
         $fraction_arr = model("fraction")
             ->getUserFractionInfo($where_fraction_info_arr);
-
-        Session::set("user_arr.colleges_id", $fraction_arr["colleges_id"]);
-        Session::set("user_arr.user_name", $fraction_arr["user_name"]);
-        Session::set("user_arr.major_id", $fraction_arr["major_id"]);
+        if (!Session::has("user_arr.colleges_id")){
+            Session::set("user_arr.colleges_id", $fraction_arr["colleges_id"]);
+        }
+        if (!Session::has("user_arr.user_name")){
+            Session::set("user_arr.user_name", $fraction_arr["user_name"]);
+        }
+        if (!Session::has("user_arr.major_id")){
+            Session::set("user_arr.major_id", $fraction_arr["major_id"]);
+        }
 
     }
 

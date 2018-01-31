@@ -11,57 +11,33 @@ m.controller(
         "$scope",
         "$http",
         function ($scope, $http){
-            $scope.page = 1;
-            $scope.spiner_example = true;
+
+            $scope.data = {
+                colleges_search : "",
+                colleges_id : "",
+                colleges_arr : [],
+                faculty_search : "",
+                faculty_id : "",
+                faculty_arr : [],
+                major_search : "",
+                major_id : "",
+                major_arr : [],
+                ranking_arr : [],
+                spiner_example : true,
+                page : 1
+            };
 
             /**
-             * 获取所有的专业课代码
+             * 获取学校数据方法
+             * @method 调用
              */
-            $http.get(
-                "/admin/achievement/get_code_list"
-            ).then(
-                function (result){
-                    $scope.code_arr = result.data.data;
-                },
-                function (){
-                    layer.msg(
-                        "网络错误,请稍后重试",
-                        {
-                            anim : 2,
-                            time : 900
-                        },
-                        function (){
-                            // window.location.reload(true);
-                        }
-                    );
-                }
-            );
-
-            /**
-             * 获取所有的成绩
-             */
-            $scope.getRankingList = function (page, data){
+            $scope.getCollegesData = function (page, parameter_arr){
                 $http.post(
-                    "/admin/achievement/get_ranking_data?page="+page,
-                    data
+                    "/admin/achievement/get_colleges_data?page="+page,
+                    parameter_arr
                 ).then(
                     function (result){
-                        $scope.ranking_data = result.data;
-                        $scope.ranking_arr = result.data.data.data;
-                        $scope.spiner_example = false;
-                        if (page != 1){
-                            // 循环获取到的数据添加到页面数组里面
-                            angular.forEach($scope.ranking_data.data.data.data, function (value, key) {
-                                console.log(value);
-                                $scope.ranking_arr.push(value);
-                            });
-                        }else{
-                            $scope.ranking_arr = $scope.ranking_data.data.data;
-                        }
-                        if ($scope.ranking_data.data.data.last_page <= 1){
-                            $scope.load_str = "已经到底了~";
-                            $scope.add_colleges = true;
-                        }
+                        $scope.data.colleges_arr = result.data.data.data;
                     },
                     function (){
                         layer.msg(
@@ -71,7 +47,170 @@ m.controller(
                                 time : 900
                             },
                             function (){
-                                // window.location.reload(true);
+                               window.location.reload(true);
+                            }
+                        );
+                    }
+                );
+            };
+            // 首次调用获取学校数据
+            $scope.getCollegesData(1);
+            /**
+             * 监控学校搜索字段的变化
+             * @method 自动
+             */
+            $scope.$watch(
+                "data.colleges_search",
+                function(){
+                    var parameter_arr = {
+                        "colleges_name" : $scope.data.colleges_search
+                    };
+                    if ($scope.data.colleges_search!=""){
+                        $scope.getCollegesData(1, parameter_arr);
+                    }
+                }
+            );
+
+            /**
+             * 获取院系所数据的方法
+             * @method 调用
+             */
+            $scope.getFacultyData = function (parameter_arr){
+                $http.post(
+                    "/admin/achievement/get_faculty_data",
+                    parameter_arr
+                ).then(
+                    function (result){
+                        $scope.data.faculty_arr = result.data.data;
+                    },
+                    function (){
+                        layer.msg(
+                            "网络错误,请稍后重试",
+                            {
+                                anim : 2,
+                                time : 900
+                            },
+                            function (){
+                               window.location.reload(true);
+                            }
+                        );
+                    }
+                );
+            };
+            /**
+             * 监视学校id的变化
+             * @method 自动
+             */
+            $scope.$watch(
+                "data.colleges_id",
+                function(){
+                    if ($scope.data.colleges_id==false){
+                        return false;
+                    }
+                    var parameter_arr = {
+                        "colleges_id" : $scope.data.colleges_id
+                    };
+                    $scope.getFacultyData(parameter_arr);
+                }
+            );
+            /**
+             * 监控院系所搜索字段的变化
+             * @method 自动
+             */
+            $scope.$watch(
+                "data.faculty_search",
+                function(){
+                    var parameter_arr = {
+                        "faculty_name" : $scope.data.faculty_search,
+                        "colleges_id" : $scope.data.colleges_id
+                    };
+                    if ($scope.data.faculty_search!=""){
+                        $scope.getFacultyData(parameter_arr);
+                    }
+                }
+            );
+
+            /**
+             * 获取专业数据的方法
+             * @method 调用
+             */
+            $scope.getMajorData = function (parameter_arr){
+                $http.post(
+                    "/admin/achievement/get_major_data",
+                    parameter_arr
+                ).then(
+                    function (result){
+                        $scope.data.major_arr = result.data.data;
+                    },
+                    function (){
+                        layer.msg(
+                            "网络错误,请稍后重试",
+                            {
+                                anim : 2,
+                                time : 900
+                            },
+                            function (){
+                               window.location.reload(true);
+                            }
+                        );
+                    }
+                );
+            };
+            /**
+             * 监控专业搜索字段的变化
+             * @method 自动
+             */
+            $scope.$watch(
+                "data.major_search",
+                function(){
+                    var parameter_arr = {
+                        "major_name" : $scope.data.major_search,
+                        "faculty_id" : $scope.data.faculty_id
+                    };
+                    if ($scope.data.major_search!=""){
+                        $scope.getMajorData(parameter_arr);
+                    }
+                }
+            );
+
+            /**
+             * 监视院系所id的变化
+             * @method 自动
+             */
+            $scope.$watch(
+                "data.faculty_id",
+                function(){
+                    if ($scope.data.faculty_id==false){
+                        return false;
+                    }
+                    var parameter_arr = {
+                        "faculty_id" : $scope.data.faculty_id
+                    };
+                    $scope.getMajorData(parameter_arr);
+                }
+            );
+
+            /**
+             * 获取所有的成绩
+             */
+            $scope.getRankingList = function (page, parameter_arr){
+                $http.post(
+                    "/admin/achievement/get_ranking_data?page="+page,
+                    parameter_arr
+                ).then(
+                    function (result){
+                        $scope.data.ranking_arr = result.data.data.data;
+                        $scope.data.spiner_example = false;
+                    },
+                    function (){
+                        layer.msg(
+                            "网络错误,请稍后重试",
+                            {
+                                anim : 2,
+                                time : 900
+                            },
+                            function (){
+                                window.location.reload(true);
                             }
                         );
                     }
@@ -79,11 +218,23 @@ m.controller(
             };
 
             /**
-             * 监控code的变化随时获取新数据
+             * 监视专业id的变化
+             * @method 自动
              */
-            $scope.monitorCode = function (){
-                $scope.getRankingList($scope.page, $scope.data);
-            };
+            $scope.$watch(
+                "data.major_id",
+                function(){
+                    if ($scope.data.major_id==false){
+                        return false;
+                    }
+                    var parameter_arr = {
+                        "colleges_id" : $scope.data.colleges_id,
+                        "faculty_id" : $scope.data.faculty_id,
+                        "major_id" : $scope.data.major_id
+                    };
+                    $scope.getRankingList($scope.data.page, parameter_arr);
+                }
+            );
 
             /**
              * 监控当前页面是否上拉到底,
@@ -91,17 +242,15 @@ m.controller(
              * @method 自动调用
              */
             $(window).scroll(function () {
-                var a = $(window).scrollTop()+340;
-                var b = $(document).height();
-                var c = $(window).height();
-
-                if (a >= b - c) {
+                var h = $(document).height(); //div可视区域的高度
+                var a = $(document).scrollTop()+360;
+                var b = $(window).height();
+                if (a >= h - b) {
                     //上面的代码是判断滚动条滑到底部的代码
                     //alert("滑到底部了");
-
-                    if ($scope.page < $scope.ranking_data.data.last_page){
-                        $scope.page = $scope.ranking_data.data.current_page+1;
-                        $scope.getRankingList($scope.page, $scope.data);
+                    if ($scope.data.page < $scope.data.data.data.last_page){
+                        $scope.data.page = $scope.data.data.data.current_page+1;
+                        $scope.getRankingList($scope.data.page);
                         return false;
                     }
                     $scope.spiner_example = false;
@@ -114,12 +263,11 @@ m.controller(
                     );
                     // 把数据拉回到 $scope 的作用域里面
                     $scope.$apply(function(){
-                        $scope.page;
+                        $scope.data.page;
                         $scope.spiner_example;
                     });
                 }
             });
-
 
             $scope.details = function (user_id, fraction_id){
                 var data = {
@@ -137,7 +285,7 @@ m.controller(
                         layer.open({
                             type: 1,
                             skin: 'layui-layer-rim', //加上边框
-                            area: ['420px', '240px'], //宽高
+                            area: ['420px', '260px'], //宽高
                             content:str
                         });
                     },
@@ -156,6 +304,11 @@ m.controller(
                 );
             };
 
+            /**
+             * 组装课程页面代码
+             * @param data
+             * @returns {string}
+             */
             function get_html(data){
                 var str = "<table class=\"table table-bordered table-hover\">\n" +
                     "    <thead>\n" +
@@ -175,7 +328,6 @@ m.controller(
                     "</table>";
                 return str;
             }
-
         }
     ]
 );

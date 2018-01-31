@@ -149,7 +149,10 @@ class Fraction extends Base {
      * @throws \think\exception\DbException
      */
     public function getCodeList(){
-        $major_objs = $this->distinct(true)->field("major")->select();
+        $major_objs = $this
+            ->distinct(true)
+            ->field("major")
+            ->select();
         $major_arrs = $this->forToArray($major_objs);
         return $major_arrs;
     }

@@ -24,6 +24,9 @@ class Major extends Base {
         if (!$parameter_arr){
             return false;
         }
+        if ($parameter_arr && isset($parameter_arr["major_name"])){
+            $parameter_arr["major_name"]  = ["like","%".$parameter_arr["major_name"]."%"];
+        }
         $major_objs = $this
             ->field(
                 "id," .

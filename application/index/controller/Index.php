@@ -200,6 +200,7 @@ class Index extends Base {
                 "缺少指定参数"
             );
         }
+        Session::set("user_arr.colleges_id", $colleges_id);
         return view();
     }
 
@@ -784,9 +785,12 @@ class Index extends Base {
             $major_id,
             $total
         );
+        $return_arr = [
+            "url" => "/index/index/ranking"
+        ];
         return $this->response_return_json(
             $fraction_id,
-            $fraction_id,
+            $return_arr,
             "保存成绩成功,正在为您查询排名~",
             "保存成绩出错,请稍后重试"
         );

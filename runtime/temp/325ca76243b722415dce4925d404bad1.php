@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\workingspace\ranking\public/../application/index\view\index\choice.html";i:1517325784;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\workingspace\ranking\public/../application/index\view\index\choice.html";i:1517327953;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_choice_application">
 
@@ -44,18 +44,6 @@
                     <input type="text" class="cell-input" placeholder="请输入您的手机号" autocomplete="off" ng-model="data.telephone">
                 </div>
             </div>
-            <div class="cell-item">
-                <div class="cell-left">QQ号：</div>
-                <div class="cell-right">
-                    <input type="text" class="cell-input" placeholder="请输入您的QQ号" autocomplete="off" ng-model="data.qq">
-                </div>
-            </div>
-            <div class="cell-item">
-                <div class="cell-left">微信号：</div>
-                <div class="cell-right">
-                    <input type="text" class="cell-input" placeholder="请输入您的微信号" autocomplete="off" ng-model="data.wechat">
-                </div>
-            </div>
         </div>
         <div class="biaoti">专业选择</div>
         <div class="add">
@@ -79,17 +67,43 @@
                 成绩录入
             </div>
             <div class="for">
-                <div class="cell-item" ng-repeat="(k, v) in curriculum_arr">
-                    <div class="cell-left" ng-bind="v.curriculum_name"></div>
+                <div class="cell-item">
+                    <div class="cell-left">政治</div>
                     <div class="cell-right">
-                        <input type="text" class="cell-input curriculum" id="{{v.id}}" name="{{v.id}}" placeholder="请输入您的成绩" autocomplete="off">
+                        <input type="text" class="cell-input curriculum" id="1" name="1" placeholder="请输入您的成绩" autocomplete="off">
                     </div>
                 </div>
                 <div class="cell-item">
-                    <div class="cell-left">专业科目代码：</div>
+                    <div class="cell-left">外语</div>
                     <div class="cell-right">
-                        <input type="text" class="cell-input" placeholder="请输入您的专业科目代码" autocomplete="off" ng-model="data.code">
+                        <input type="text" class="cell-input curriculum" id="2" name="2" placeholder="请输入您的成绩" autocomplete="off">
                     </div>
+                </div>
+                <div class="cell-item">
+                    <div class="cell-left">业务课一</div>
+                    <div class="cell-right">
+                        <input type="text" class="cell-input curriculum" id="3" name="3" placeholder="请输入您的成绩" autocomplete="off">
+                    </div>
+                </div>
+                <div class="cell-item">
+                    <div class="cell-left">业务课二</div>
+                    <div class="cell-right">
+                        <input type="text" class="cell-input curriculum" id="4" name="5" placeholder="请输入您的成绩" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add">
+            <div class="cell-item">
+                <div class="cell-left">QQ号：</div>
+                <div class="cell-right">
+                    <input type="text" class="cell-input" placeholder="请输入您的QQ号" autocomplete="off" ng-model="data.qq">
+                </div>
+            </div>
+            <div class="cell-item">
+                <div class="cell-left">微信号：</div>
+                <div class="cell-right">
+                    <input type="text" class="cell-input" placeholder="请输入您的微信号" autocomplete="off" ng-model="data.wechat">
                 </div>
             </div>
         </div>

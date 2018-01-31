@@ -251,7 +251,8 @@ input {
 .buttom {
     width: 90%;
     height: 0.8rem;
-    margin: 0 auto 0.4rem;
+    margin: 0.5rem auto 0;
+    padding-bottom: 0.5rem;
 }
 
 .buttom input {

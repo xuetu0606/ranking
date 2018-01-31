@@ -22,21 +22,20 @@
         <div>
             <p>我的排名</p>
         </div>
-        <div onclick="window.location.href='/index/index/index'">
-            <img src="/static/img/xiangzuo.png" alt="向左">
-        </div>
     </div>
     <div class="kong">
+
     </div>
     <div class="center" id="paihang">
-        <div class="phtop">
-            <div class="wode">
-                <div class="imgright">
-                    <span ng-bind="user_ranking_info_arr.user_name"></span>
-                    <p ng-bind="'第'+ranking +'名'"></p>
-                </div>
-                <em ng-bind="'总分：'+user_ranking_info_arr.total"></em>
-            </div>
+        <div class="flock">
+            <p>点击右上角分享到考研群，或发送至好友，更多人登陆会使排名成绩更准确</p>
+        </div>
+        <div class="number">
+            <p>
+                <span>
+                    <span>**</span>大学<span>**</span>专业复试交流群</span>
+                <span>1104898767</span>
+            </p>
         </div>
         <div class="phbot">
             <div class="phlist" ng-repeat="(k, v) in rankingArray">
@@ -47,9 +46,18 @@
             <p ng-bind="last_str">拼命加载中~</p>
         </div>
     </div>
+    <div class="phtop">
+        <div class="wode">
+            <div class="imgright">
+                <span ng-bind="user_ranking_info_arr.user_name"></span>
+                <p ng-bind="'第'+ranking +'名'"></p>
+            </div>
+            <em ng-bind="'总分：'+user_ranking_info_arr.total"></em>
+        </div>
+    </div>
     <div class="footer">
-        <div>
 
+        <div>
             <div>
                 <a href="/index/index/logout.html">
                     <div>
@@ -59,7 +67,7 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a href="/index/index/ranking.html">
                     <div>
                         <span class="iconfont icon-shuaxin"></span>
                     </div>

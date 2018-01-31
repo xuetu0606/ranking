@@ -28,7 +28,8 @@
         <div class="add">
             <div class="cell-item">
                 <div class="cell-left">学校：</div>
-                <div class="mySchool">清华大学</div>
+                <div class="mySchool" ng-bind="colleges_name"></div>
+                <input type="hidden" id="colleges_id" value="{$Think.get.colleges_id}"/>
             </div>
             <div class="cell-item">
                 <div class="cell-left">姓名：</div>

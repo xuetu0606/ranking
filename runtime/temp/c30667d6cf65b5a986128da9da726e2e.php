@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517359804;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517364806;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_choice_application">
 
@@ -29,7 +29,8 @@
         <div class="add">
             <div class="cell-item">
                 <div class="cell-left">学校：</div>
-                <div class="mySchool">清华大学</div>
+                <div class="mySchool" ng-bind="colleges_name"></div>
+                <input type="hidden" id="colleges_id" value="<?php echo \think\Request::instance()->get('colleges_id'); ?>"/>
             </div>
             <div class="cell-item">
                 <div class="cell-left">姓名：</div>

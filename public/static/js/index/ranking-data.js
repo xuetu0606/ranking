@@ -55,7 +55,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            window.location.reload(true);
+                            //window.location.reload(true);
                         }
                     );
                 }
@@ -79,7 +79,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            window.location.reload(true);
+                            //window.location.reload(true);
                         }
                     );
                 }
@@ -102,7 +102,7 @@ m.controller(
                             time : 900
                         },
                         function (){
-                            window.location.reload(true);
+                            //window.location.reload(true);
                         }
                     );
                 }
@@ -156,7 +156,7 @@ m.controller(
                                 time : 900
                             },
                             function (){
-                                window.location.reload(true);
+                                //window.location.reload(true);
                             }
                         );
                     }
@@ -180,9 +180,9 @@ m.controller(
                         $scope.getCollegesData(page);
                         return false;
                     }
-                    $scope.load_str = "已经到底了~";
+                    $scope.last_str = "已经到底了~";
                     $scope.$apply(function (){
-                        $scope.load_str;
+                        $scope.last_str;
                     });
                 }
             });

@@ -46,8 +46,22 @@ m.controller(
                     data
                 ).then(
                     function (result){
+                        $scope.ranking_data = result.data;
                         $scope.ranking_arr = result.data.data.data;
                         $scope.spiner_example = false;
+                        if (page != 1){
+                            // 循环获取到的数据添加到页面数组里面
+                            angular.forEach($scope.ranking_data.data.data.data, function (value, key) {
+                                console.log(value);
+                                $scope.ranking_arr.push(value);
+                            });
+                        }else{
+                            $scope.ranking_arr = $scope.ranking_data.data.data;
+                        }
+                        if ($scope.ranking_data.data.data.last_page <= 1){
+                            $scope.load_str = "已经到底了~";
+                            $scope.add_colleges = true;
+                        }
                     },
                     function (){
                         layer.msg(
@@ -77,17 +91,16 @@ m.controller(
              * @method 自动调用
              */
             $(window).scroll(function () {
-                var a = $(window).scrollTop()+400;
+                var a = $(window).scrollTop()+340;
                 var b = $(document).height();
                 var c = $(window).height();
-                console.log('a==>',a);
-                console.log('b==>',b);
-                console.log('c==>',c);
+
                 if (a >= b - c) {
                     //上面的代码是判断滚动条滑到底部的代码
                     //alert("滑到底部了");
-                    if ($scope.page < $scope.data.last_page){
-                        $scope.page = $scope.data.current_page+1;
+
+                    if ($scope.page < $scope.ranking_data.data.last_page){
+                        $scope.page = $scope.ranking_data.data.current_page+1;
                         $scope.getRankingList($scope.page, $scope.data);
                         return false;
                     }

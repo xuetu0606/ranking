@@ -304,3 +304,9 @@ body {
     font-size: 0.32rem;
     color: #333;
 }
+
+input {
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}

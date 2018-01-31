@@ -75,7 +75,6 @@ class Fraction extends Base {
                 "user_name," .
                 "telephone," .
                 "total," .
-                "code," .
                 "wechat," .
                 "qq," .
                 "colleges_id," .
@@ -105,10 +104,10 @@ class Fraction extends Base {
                 "id," .
                 "user_id," .
                 "colleges_id," .
+                "major_id," .
                 "user_name," .
                 "telephone," .
-                "total," .
-                "code"
+                "total"
             )->find();
         if ($user_fraction_info_obj){
             $user_fraction_info_arr = $user_fraction_info_obj->toArray();
@@ -128,7 +127,7 @@ class Fraction extends Base {
             ->where($parameter_arr)
             ->value("total");
         $where_ranking_arr = [
-            "code" => $parameter_arr["code"],
+            "major_id" => $parameter_arr["major_id"],
             "total" => [
                 ">",
                 $user_total
@@ -142,7 +141,7 @@ class Fraction extends Base {
     }
 
     /**
-     * 获取全部专业课code
+     * 获取全部专业课major
      * @method 调用
      * @return mixed array
      * @throws \think\db\exception\DataNotFoundException
@@ -150,9 +149,12 @@ class Fraction extends Base {
      * @throws \think\exception\DbException
      */
     public function getCodeList(){
-        $code_objs = $this->distinct(true)->field("code")->select();
-        $code_arrs = $this->forToArray($code_objs);
-        return $code_arrs;
+        $major_objs = $this
+            ->distinct(true)
+            ->field("major")
+            ->select();
+        $major_arrs = $this->forToArray($major_objs);
+        return $major_arrs;
     }
 
 }

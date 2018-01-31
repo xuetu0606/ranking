@@ -38,15 +38,69 @@ class Achievement extends Base{
     }
 
     /**
-     * 根据code查询所有的排名信息
+     * 返回当前系统内所有的学校数据
+     * @method GET
+     * @return mixed|string json
+     */
+    public function get_colleges_data(){
+        $request = request();
+        $request_arr = $request->post();
+        $colleges_arrs = model("colleges")->getCollegesList($request_arr);
+        return $this->response_return_json(
+            $colleges_arrs,
+            $colleges_arrs,
+            "获取成功",
+            "获取失败"
+        );
+    }
+
+    /**
+     * 获取当前学校的院系所列表
+     * @method GET
+     * @return mixed|string json
+     */
+    public function get_faculty_data(){
+        $request = request();
+        $request_arr = $request->post();
+        $faculty_arr = model("faculty")->getChoiceList($request_arr);
+        return $this->response_return_json(
+            $faculty_arr,
+            $faculty_arr,
+            "获取成功",
+            "获取失败"
+        );
+    }
+
+    /**
+     * 根据院系所id查询所有的专业数据
+     * @methdo GET
+     * @param bool $faculty_id 院系所id
+     * @return mixed|string json
+     */
+    public function get_major_data($faculty_id = false){
+        $request = request();
+        $request_arr = $request->post();
+        $major_arr = model("major")->getMajorList($request_arr);
+        return $this->response_return_json(
+            $major_arr,
+            $major_arr,
+            "获取成功",
+            "获取失败"
+        );
+    }
+
+    /**
+     * 根据专业查询所有的排名信息
      * @method POST
      * @return mixed|string json
      */
     public function get_ranking_data(){
         $request = request();
-        $code = $request->post("code");
+        $colleges_id = $request->post("colleges_id");
+        $major_id = $request->post("major_id");
         $fraction_where_arr = [
-            "code" => $code,
+            "colleges_id" => $colleges_id,
+            "major_id" => $major_id,
         ];
         $fraction_data = model("fraction")
             ->getFractionList($fraction_where_arr);

@@ -17,6 +17,7 @@ class Base extends Controller {
         parent::__construct();
         $this->is_login();
         $this->is_ranking();
+        $this->get_user_info_data();
     }
 
     /**
@@ -46,7 +47,7 @@ class Base extends Controller {
             $current_path_str != Config::get("forget_data_path")
         ;
         if (Session::has("user_arr.id")!=true && $is_in_path){
-            return $this->redirect("/index/index/login.html");
+            return $this->redirect("/index/index/register.html");
         }
         $this->get_user_info_data();
 
@@ -113,9 +114,9 @@ class Base extends Controller {
     }
 
     /**
-     * 从session中获取学校id
+     * 从session中获取code
      * @method 调用
-     * @return mixed 学校id
+     * @return mixed code
      */
     public function get_user_code(){
         $code = Session::get("user_arr.code");
@@ -129,6 +130,16 @@ class Base extends Controller {
      */
     public function get_user_colleges(){
         $colleges_id = Session::get("user_arr.colleges_id");
+        return $colleges_id;
+    }
+
+    /**
+     * 从session中获取专业id
+     * @method 调用
+     * @return mixed 专业id
+     */
+    public function get_user_major(){
+        $colleges_id = Session::get("user_arr.major_id");
         return $colleges_id;
     }
 
@@ -159,21 +170,19 @@ class Base extends Controller {
      */
     public function get_user_info_data(){
         $user_id = $this->get_user_id();
-
         $where_fraction_info_arr = [
             "user_id" => $user_id,
         ];
         $fraction_arr = model("fraction")
             ->getUserFractionInfo($where_fraction_info_arr);
-
-        if (Session::has("user_arr.colleges_id")!=true){
-            Session::set("user_arr.user_name", $fraction_arr["colleges_id"]);
+        if (!Session::has("user_arr.colleges_id")){
+            Session::set("user_arr.colleges_id", $fraction_arr["colleges_id"]);
         }
-        if (Session::has("user_arr.user_name")!=true){
+        if (!Session::has("user_arr.user_name")){
             Session::set("user_arr.user_name", $fraction_arr["user_name"]);
         }
-        if (Session::has("user_arr.code")!=true){
-            Session::set("user_arr.code", $fraction_arr["code"]);
+        if (!Session::has("user_arr.major_id")){
+            Session::set("user_arr.major_id", $fraction_arr["major_id"]);
         }
 
     }

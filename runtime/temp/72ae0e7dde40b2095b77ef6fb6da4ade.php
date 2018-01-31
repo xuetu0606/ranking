@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\index.html";i:1517304360;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\index.html";i:1517359884;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_index_application">
 
@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>搜索</title>
     <link rel="stylesheet" href="/static/css/search.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_554500_4lgof110xpzoxbt9.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_554500_wk0wae7bvtq5xw29.css">
     <script src="/static/js/rem.js"></script>
     <script src="/static/js/jquery-3.2.1.min.js"></script>
     <script src="/static/js/search/search.js"></script>
@@ -31,7 +31,7 @@
     </div>
     <div class="a">
         <div class="center" ng-repeat="v in collegesArray">
-            <a href="/index/index/choice/colleges_id/{{v.id}}.html">
+            <a href="/index/index/choice/colleges_id/{{v.id}}.html?colleges_id={{v.id}}">
                 <p ng-bind="v.colleges_name">
                 </p>
                 <i class="iconfont icon-weibiaoti34"></i>
@@ -48,36 +48,6 @@
         </div>
         <div class="jiazai" ng-bind="load_str">
             正在拼命加载中~
-        </div>
-    </div>
-    <div class="kong">
-    </div>
-    <div class="footer">
-        <div>
-            <div>
-                <a href="/index/index/index.html">
-                    <div>
-                        <span class="iconfont icon-xuexiao"></span>
-                    </div>
-                    <div>院校</div>
-                </a>
-            </div>
-            <div>
-                <a href="/index/index/ranking.html">
-                    <div>
-                        <span class="iconfont icon-icon--"></span>
-                    </div>
-                    <div>排名</div>
-                </a>
-            </div>
-            <div>
-                <a href="/index/index/logout.html">
-                    <div>
-                        <span class="iconfont icon-icon-"></span>
-                    </div>
-                    <div>退出</div>
-                </a>
-            </div>
         </div>
     </div>
     <script>

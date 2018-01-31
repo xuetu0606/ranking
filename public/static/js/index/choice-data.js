@@ -17,6 +17,26 @@ m.controller(
                 "user_name" : "",
                 "code" : ""
             };
+            var colleges_id = $("#colleges_id").val();
+            $http.get(
+                "/index/index/get_colleges_name/colleges_id/"+colleges_id
+            ).then(
+                function (result){
+                    $scope.colleges_name = result.data;
+                },
+                function (){
+                    layer.msg(
+                        "网络错误,请稍后重试",
+                        {
+                            anim : 2,
+                            time : 900
+                        },
+                        function (){
+                            window.location.reload(true);
+                        }
+                    );
+                }
+            );
 
             $http.get(
                 "/index/index/get_faculty_data"

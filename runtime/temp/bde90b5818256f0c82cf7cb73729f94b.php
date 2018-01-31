@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:97:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\achievement\ranking.html";i:1517332826;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\header.html";i:1516956621;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:97:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\achievement\ranking.html";i:1517391685;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\header.html";i:1516956621;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,78 +27,101 @@
 <script src="/static/js/admin/ranking_data.js"></script>
 <body class="gray-bg" ng-app="ranking_admin_ranking_application" ng-controller="ranking_admin_ranking_controller">
 <div class="wrapper wrapper-content animated fadeInRight">
-    <!-- Panel Other -->
-    <div class="ibox float-e-margins">
-        <div class="ibox-title">
-            <h5>排名查询</h5>
-        </div>
-        <div class="ibox-content">
-            <div class="hr-line-dashed"></div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">专业课代码</label>
-                <div class="col-sm-4">
-                    <select class="form-control m-b" name="account" ng-model="data.code" ng-change="monitorCode();">
-                        <option value="">请选择</option>
-                        <option ng-repeat="(k, v) in code_arr" value="{{v.code}}" ng-bind="v.code"></option>
-                    </select>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>编辑管理员</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="form_basic.html#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content form-horizontal form-inline">
+                    <div class="col-sm-12 container">
+                        <div class="row">
+                            <div class="hr-line-dashed"></div>
+                            <div class="col-md-1"></div>
+                            <label>请选择学校</label>
+                            <div class="input-group col-md-3">
+                                <input type="text" class="form-control" placeholder="搜索学校" ng-model="data.colleges_search"/>
+                                <select class="form-control m-b" ng-model="data.colleges_id">
+                                    <option value="">==请选择学校==</option>
+                                    <option ng-repeat="(k, v) in data.colleges_arr" ng-value="v.id" ng-bind="v.colleges_name"></option>
+                                </select>
+                            </div>
+                            <label>请选择院系所</label>
+                            <div class="input-group col-md-3">
+                                <input type="text" class="form-control" placeholder="搜索院系所" ng-model="data.faculty_search"/>
+                                <select class="form-control m-b" ng-model="data.faculty_id">
+                                    <option value="">==请选择院系所==</option>
+                                    <option ng-repeat="(k, v) in data.faculty_arr" ng-value="v.id" ng-bind="v.faculty_name"></option>
+                                </select>
+                            </div>
+                            <label>请选择专业</label>
+                            <div class="input-group col-md-3">
+                                <input type="text" class="form-control" placeholder="搜索专业" ng-model="data.major_search"/>
+                                <select class="form-control m-b" ng-model="data.major_id">
+                                    <option value="">==请选择专业==</option>
+                                    <option ng-repeat="(k, v) in data.major_arr" ng-value="v.id" ng-bind="v.major_name"></option>
+                                </select>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                        </div>
+                    </div>
+                    <div class="example-wrap">
+                        <div class="example">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr class="long-tr">
+                                    <th>名次</th>
+                                    <th>姓名</th>
+                                    <th>微信</th>
+                                    <th>QQ</th>
+                                    <th>学校</th>
+                                    <th>院系所</th>
+                                    <th>专业</th>
+                                    <th>手机号</th>
+                                    <th>总分</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tr class="long-td" ng-repeat="(k, v) in data.ranking_arr">
+                                    <td ng-bind="'第'+(k+1)+'名'"></td>
+                                    <td ng-bind="v.user_name"></td>
+                                    <td ng-bind="v.wechat"></td>
+                                    <td ng-bind="v.qq"></td>
+                                    <td ng-bind="v.colleges_name"></td>
+                                    <td ng-bind="v.faculty_name"></td>
+                                    <td ng-bind="v.major_name"></td>
+                                    <td ng-bind="v.telephone"></td>
+                                    <td ng-bind="v.total"></td>
+                                    <td>
+                                        <div class="btn btn-primary btn-outline btn-xs" ng-click="details(v.user_id, v.fraction_id);">
+                                            <i class="fa fa-paste"></i>
+                                            查看成绩
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tbody id="list-content"></tbody>
+                            </table>
+                            <div id="AjaxPage" style=" text-align: right;"></div>
+                            <div id="allpage" style=" text-align: right;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="example-wrap">
-                <div class="example">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                        <tr class="long-tr">
-                            <th>名次</th>
-                            <th>姓名</th>
-                            <th>微信</th>
-                            <th>QQ</th>
-                            <th>学校</th>
-                            <th>院系所</th>
-                            <th>专业</th>
-                            <th>专业课代码</th>
-                            <th>总分</th>
-                            <th>操作</th>
-                        </tr>
-                        </thead>
-                        <tr class="long-td" ng-repeat="(k, v) in ranking_arr">
-                            <td ng-bind="'第'+(k+1)+'名'"></td>
-                            <td ng-bind="v.user_name"></td>
-                            <td ng-bind="v.wechat"></td>
-                            <td ng-bind="v.qq"></td>
-                            <td ng-bind="v.colleges_name"></td>
-                            <td ng-bind="v.faculty_name"></td>
-                            <td ng-bind="v.major_name"></td>
-                            <td ng-bind="v.code"></td>
-                            <td ng-bind="v.total"></td>
-                            <td>
-                                <div class="btn btn-primary btn-outline btn-xs" ng-click="details(v.user_id, v.fraction_id);">
-                                    <i class="fa fa-paste"></i>
-                                    查看成绩
-                                </div>
-                            </td>
-                        </tr>
-                        <tbody id="list-content"></tbody>
-                    </table>
-                    <div id="AjaxPage" style=" text-align: right;"></div>
-                    <div id="allpage" style=" text-align: right;"></div>
-                </div>
-            </div>
-            <!-- End Example Pagination -->
+
         </div>
     </div>
 </div>
-<!-- End Panel Other -->
-</div>
-
-<!-- 加载动画 -->
-<div class="spiner-example" ng-show="spiner_example">
-    <div class="sk-spinner sk-spinner-three-bounce">
-        <div class="sk-bounce1"></div>
-        <div class="sk-bounce2"></div>
-        <div class="sk-bounce3"></div>
-    </div>
-</div>
-
 <script src="__JS__/jquery.min.js?v=2.1.4"></script>
 <script src="__JS__/bootstrap.min.js?v=3.3.6"></script>
 <script src="__JS__/content.min.js?v=1.0.0"></script>
@@ -115,6 +138,107 @@
 <script src="/static/js/admin/student_list_data.js"></script>
 <script>
     $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+</script>
+<script type="text/javascript" src="/static/admin/webupload/webuploader.min.js"></script>
+<script type="text/javascript">
+    var $list = $('#fileList');
+    //上传图片,初始化WebUploader
+    var uploader = WebUploader.create({
+
+        auto: true,// 选完文件后，是否自动上传。
+        swf: '/static/admin/webupload/Uploader.swf',// swf文件路径
+        server: "<?php echo url('Upload/uploadface'); ?>",// 文件接收服务端。
+        duplicate :true,// 重复上传图片，true为可重复false为不可重复
+        pick: '#imgPicker',// 选择文件的按钮。可选。
+
+        accept: {
+            title: 'Images',
+            extensions: 'gif,jpg,jpeg,bmp,png',
+            mimeTypes: 'image/jpg,image/jpeg,image/png'
+        },
+
+        'onUploadSuccess': function(file, data, response) {
+            $("#data_photo").val(data._raw);
+            $("#img_data").attr('src', '/uploads/face/' + data._raw).show();
+        }
+    });
+
+    uploader.on( 'fileQueued', function( file ) {
+        $list.html( '<div id="' + file.id + '" class="item">' +
+            '<h4 class="info">' + file.name + '</h4>' +
+            '<p class="state">正在上传...</p>' +
+            '</div>' );
+    });
+
+    // 文件上传成功
+    uploader.on( 'uploadSuccess', function( file ) {
+        $( '#'+file.id ).find('p.state').text('上传成功！');
+    });
+
+    // 文件上传失败，显示上传出错。
+    uploader.on( 'uploadError', function( file ) {
+        $( '#'+file.id ).find('p.state').text('上传出错!');
+    });
+
+    //提交
+    $(function(){
+        $('#userEdit').ajaxForm({
+            beforeSubmit: checkForm,
+            success: complete,
+            dataType: 'json'
+        });
+
+        function checkForm(){
+            if( '' == $.trim($('#username').val())){
+                layer.msg('请输入用户名',{icon:2,time:1500,shade: 0.1}, function(index){
+                    layer.close(index);
+                });
+                return false;
+            }
+
+            if( '' == $.trim($('#groupid').val())){
+                layer.msg('请选择用户角色',{icon:2,time:1500,shade: 0.1}, function(index){
+                    layer.close(index);
+                });
+                return false;
+            }
+
+            if( '' == $.trim($('#real_name').val())){
+                layer.msg('请输入真实姓名',{icon:2,time:1500,shade: 0.1}, function(index){
+                    layer.close(index);
+                });
+                return false;
+            }
+        }
+
+
+        function complete(data){
+            if(data.code==1){
+                layer.msg(data.msg, {icon: 6,time:1500,shade: 0.1}, function(index){
+                    window.location.href="<?php echo url('user/index'); ?>";
+                });
+            }else{
+                layer.msg(data.msg, {icon: 5,time:1500,shade: 0.1});
+                return false;
+            }
+        }
+
+    });
+
+
+
+    //IOS开关样式配置
+    var elem = document.querySelector('.js-switch');
+    var switchery = new Switchery(elem, {
+        color: '#1AB394'
+    });
+    var config = {
+        '.chosen-select': {},
+    }
+    for (var selector in config) {
+        $(selector).chosen(config[selector]);
+    }
+
 </script>
 </body>
 </html>

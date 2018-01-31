@@ -86,8 +86,7 @@ class Index extends Base {
             // 查询该用户是否存在,并且存储用户id到session
             $is_user_boolean = model("user")->selectUserInfo($login_arr);
             if ($is_post_boolean){
-                $user_arr["id"] = $is_user_boolean;
-                Session::set("user_arr", $user_arr);
+                Session::set("user_arr.id", $is_user_boolean);
             }
 
             // 返回数据
@@ -315,7 +314,6 @@ class Index extends Base {
             "major_id|专业" => "require",
             "user_name|姓名" => "require",
             "telephone|手机号" => "require|number|/^1[34578]\d{9}$/",
-            "code|专业课代码" => "require",
             "wechat|微信" => "require",
             "qq|QQ" => "require",
         ]);
@@ -358,7 +356,6 @@ class Index extends Base {
             "total" => $total,
             "code" => $request_arr["code"],
         ];
-        Session::set("user_arr.code", $request_arr["code"]);
         // 验证手机微信QQ是否重复
         $check_arr = [
             "user_id" => $user_id,
@@ -403,7 +400,6 @@ class Index extends Base {
                 "保存成绩出错,请稍后重试"
             );
         }
-        Session::set("user_arr.code", $request_arr["code"]);
         $return_arr = [
             "url" => "/index/index/ranking",
         ];
@@ -471,9 +467,9 @@ class Index extends Base {
      * @return mixed|string json
      */
     public function get_ranking_data(){
-        $code = $this->get_user_code();
+        $major_id = $this->get_user_major();
         $fraction_where_arr = [
-            "code" => $code,
+            "major_id" => $major_id,
         ];
         $fraction_arr = model("fraction")->getFractionList($fraction_where_arr);
 
@@ -492,13 +488,15 @@ class Index extends Base {
      */
     public function get_user_ranking_info(){
         $user_id = $this->get_user_id();
-        $code = $this->get_user_code();
         $where_ranking_info_arr = [
             "user_id" => $user_id,
-            "code" => $code,
         ];
         $user_ranking_info_arr = model("fraction")
             ->getUserFractionInfo($where_ranking_info_arr);
+        $user_ranking_info_arr["colleges_name"] = $this
+            ->get_colleges_name($user_ranking_info_arr["colleges_id"]);
+        $user_ranking_info_arr["major_name"] = $this
+            ->get_major_name($user_ranking_info_arr["major_id"]);
         return $this->response_return_json(
             $user_ranking_info_arr,
             $user_ranking_info_arr,
@@ -514,10 +512,10 @@ class Index extends Base {
      */
     public function get_user_ranking(){
         $user_id = $this->get_user_id();
-        $code = $this->get_user_code();
+        $major_id = $this->get_user_major();
         $where_ranking_info_arr = [
             "user_id" => $user_id,
-            "code" => $code,
+            "major_id" => $major_id,
         ];
         $user_pre_ranking = model("fraction")
             ->getUserRanking($where_ranking_info_arr);
@@ -702,7 +700,6 @@ class Index extends Base {
         ){
             return view("error_is_input");
         }
-        Session::set("user_arr.colleges_id", $colleges_id);
         return view();
     }
 
@@ -731,7 +728,6 @@ class Index extends Base {
             "qq|QQ" => "require",
             "faculty|院系所" => "require",
             "major|专业" => "require",
-            "code|专业课代码" => "require",
             "curriculum_arr|课程成绩" => "require|array",
         ]);
         if (!$validate->check($request_arr)) {
@@ -789,10 +785,12 @@ class Index extends Base {
             $major_id,
             $total
         );
-        Session::set("user_arr.code", $request_arr["code"]);
+        $return_arr = [
+            "url" => "/index/index/ranking"
+        ];
         return $this->response_return_json(
             $fraction_id,
-            $fraction_id,
+            $return_arr,
             "保存成绩成功,正在为您查询排名~",
             "保存成绩出错,请稍后重试"
         );
@@ -968,11 +966,43 @@ class Index extends Base {
     }
 
     /**
+     * 查询学校名
+     * @method GET
+     * @return string
+     */
+    public function get_colleges_name($colleges_id = false){
+        if ($colleges_id){
+            $where_arr = [
+                "id" => $colleges_id,
+            ];
+        }else{
+            $where_arr = [
+                "id" => $this->get_user_colleges(),
+            ];
+        }
+        $name = model("colleges")->getNameById($where_arr);
+        return $name;
+    }
+
+    /**
+     * 获取当前专业的名字
+     * @method GET
+     * @param $major_id
+     */
+    public function get_major_name($major_id){
+        $where_arr = [
+            "id" => $major_id,
+        ];
+        $name = model("major")->getNameById($where_arr);
+        return $name;
+    }
+
+    /**
      * 退出登录
      */
     public function logout(){
         Session::delete("user_arr");
-        return view("/index/login");
+        return view("/index/register");
     }
 
 }

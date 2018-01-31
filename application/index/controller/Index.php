@@ -20,6 +20,15 @@ class Index extends Base {
      * @return \think\response\View 首页页面
      */
     public function index(){
+        $check_arr["user_id"] = $this->get_user_id();
+        $boolean_arr = $this->check_fraction_data($check_arr);
+        if (
+            $boolean_arr["status"] != true
+            &&
+            $this->check_current_path_is_ranking()
+        ){
+            return view("error_is_input");
+        }
         return view();
     }
 
@@ -191,15 +200,6 @@ class Index extends Base {
                 "访问成功",
                 "缺少指定参数"
             );
-        }
-        $check_arr["user_id"] = $this->get_user_id();
-        $boolean_arr = $this->check_fraction_data($check_arr);
-        if (
-            $boolean_arr["status"] != true
-            &&
-            $this->check_current_path_is_ranking()
-        ){
-            return view("error_is_input");
         }
         Session::set("user_arr.colleges_id", $colleges_id);
         return view();

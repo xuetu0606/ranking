@@ -9,7 +9,6 @@
             <h5>排名查询</h5>
         </div>
         <div class="ibox-content">
-
             <div class="hr-line-dashed"></div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">专业课代码</label>
@@ -34,6 +33,7 @@
                             <th>专业</th>
                             <th>专业课代码</th>
                             <th>总分</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tr class="long-td" ng-repeat="(k, v) in ranking_arr">
@@ -46,6 +46,12 @@
                             <td ng-bind="v.major_name"></td>
                             <td ng-bind="v.code"></td>
                             <td ng-bind="v.total"></td>
+                            <td>
+                                <div class="btn btn-primary btn-outline btn-xs" ng-click="details(v.user_id, v.fraction_id);">
+                                    <i class="fa fa-paste"></i>
+                                    查看成绩
+                                </div>
+                            </td>
                         </tr>
                         <tbody id="list-content"></tbody>
                     </table>

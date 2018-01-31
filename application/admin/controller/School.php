@@ -148,7 +148,11 @@ class School extends Base{
     public function school_edit_data(){
         $request = request();
         $request_arr = $request->post();
-        $query_boolean = mode("colleges")->updateInfo($request_arr);
+        $query_boolean = model("colleges")
+            ->updateInfo(
+                $request_arr,
+                Session::get("colleges_id")
+            );
         return $this->response_return_json(
             $query_boolean,
             $query_boolean,

@@ -967,12 +967,16 @@ class Index extends Base {
         return $query_boolean;
     }
 
+    public function getCollegesName(){
+        
+    }
+
     /**
      * 退出登录
      */
     public function logout(){
         Session::delete("user_arr");
-        return view("/index/login");
+        return view("/index/register");
     }
 
 }

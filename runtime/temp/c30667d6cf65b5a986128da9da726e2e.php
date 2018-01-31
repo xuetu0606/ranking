@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\choice.html";i:1517359804;}*/ ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="ranking_index_choice_application">
 
@@ -59,7 +60,7 @@
 
         </div>
         <div class="addition">
-            <a href="/index/index/input/colleges_id/{$Think.get.colleges_id}">如果没有您的专业，点击添加</a>
+            <a href="/index/index/input/colleges_id/<?php echo \think\Request::instance()->get('colleges_id'); ?>">如果没有您的专业，点击添加</a>
         </div>
         <div class="none">
             <div class="biaoti">

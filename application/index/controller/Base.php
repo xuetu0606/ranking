@@ -46,7 +46,7 @@ class Base extends Controller {
             $current_path_str != Config::get("forget_data_path")
         ;
         if (Session::has("user_arr.id")!=true && $is_in_path){
-            return $this->redirect("/index/index/login.html");
+            return $this->redirect("/index/index/register.html");
         }
         $this->get_user_info_data();
 

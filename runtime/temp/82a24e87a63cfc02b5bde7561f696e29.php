@@ -1,21 +1,24 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:89:"D:\workspace\company-www\ranking-lunhui\public/../application/index\view\index\input.html";i:1517357570;}*/ ?>
 <!DOCTYPE html>
-<html lang="en" ng-app="ranking_index_choice_application">
+<html lang="en" ng-app="ranking_index_input_application">
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>学院/年级选择</title>
+    <link rel="stylesheet" href="/static/css/input.css">
     <script src="/static/js/rem.js"></script>
-    <link rel="stylesheet" href="/static/css/achoice.css">
+    <script src="/static/js/choice/choice.js"></script>
     <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/search/search.js"></script>
     <script src="/static/js/layer/layer.js"></script>
     <script src="/static/js/angular.js"></script>
     <script src="/static/js/function.js"></script>
-    <script src="/static/js/index/choice-data.js"></script>
+    <script src="/static/js/index/input-data.js"></script>
 </head>
 
-<body ng-controller="ranking_index_choice_controller">
+<body ng-controller="ranking_index_input_controller">
     <div class="header">
         <div>
             <p>成绩录入</p>
@@ -24,6 +27,7 @@
             <img src="/static/img/xiangzuo.png" alt="向左">
         </div>
     </div>
+
     <div class="message">
         <div class="add">
             <div class="cell-item">
@@ -44,22 +48,18 @@
                 </div>
             </div>
         </div>
-        <div class="biaoti">专业选择</div>
-        <div class="add">
+
+        <div class="biaoti">
+            专业选择
+        </div>
+        <div class="school">
             <div>
-                <select class="cell-select" ng-options="v.id as v.faculty_name for v in faculty_arr" ng-model="data.faculty_id">
-                    <option value="">请选择院校</option>
-                </select>
+                <input type="text" placeholder="您所在的院系所" ng-model="data.faculty">
             </div>
             <div>
-                <select class="cell-select" name="" ng-options="v.id as v.major_name for v in major_arr" ng-model="data.major_id">
-                    <option value="">请选择专业</option>
-                </select>
+                <input type="text" placeholder="专业" ng-model="data.major">
             </div>
 
-        </div>
-        <div class="addition">
-            <a href="/index/index/input/colleges_id/{$Think.get.colleges_id}">如果没有您的专业，点击添加</a>
         </div>
         <div class="none">
             <div class="biaoti">

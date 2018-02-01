@@ -10,22 +10,22 @@
         </div>
         <div class="ibox-content">
             <!--课程添加框开始-->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div role="form" class="form-inline">
-                        <div class="form-group">
-                            <div class="input-group col-md-12">
-                                <input type="text" class="form-control" placeholder="课程名称" ng-model="curriculum.curriculum_name">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-primary" ng-click="submitCurriculumInfo();">
-                                        添加
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--<div class="row">-->
+                <!--<div class="col-sm-12">-->
+                    <!--<div role="form" class="form-inline">-->
+                        <!--<div class="form-group">-->
+                            <!--<div class="input-group col-md-12">-->
+                                <!--<input type="text" class="form-control" placeholder="课程名称" ng-model="curriculum.curriculum_name">-->
+                                <!--<span class="input-group-btn">-->
+                                    <!--<button type="button" class="btn btn-primary" ng-click="submitCurriculumInfo();">-->
+                                        <!--添加-->
+                                    <!--</button>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
             <!--课程添加框结束-->
             <div class="hr-line-dashed"></div>
 
@@ -40,18 +40,48 @@
                             <th>操作</th>
                         </tr>
                         </thead>
-                        <tr class="long-td" ng-repeat="(k, v) in curriculum_arr">
-                            <td ng-bind="v.id"></td>
-                            <td ng-bind="v.curriculum_name"></td>
-                            <td ng-bind="v.create_time"></td>
+                        <tbody><!-- ngRepeat: (k, v) in curriculum_arr --><tr class="long-td ng-scope" ng-repeat="(k, v) in curriculum_arr">
+                            <td ng-bind="v.id" class="ng-binding">1</td>
+                            <td ng-bind="v.curriculum_name" class="ng-binding">政治</td>
+                            <td ng-bind="v.create_time" class="ng-binding">2018-01-30 23:02:00</td>
                             <td>
                                 <a ng-click="deleteCurriculum(v.id);" class="btn btn-danger btn-outline btn-xs">
                                     <i class="fa fa-trash-o"></i>
                                     删除
                                 </a>
                             </td>
-                        </tr>
-                        <tbody id="list-content"></tbody>
+                        </tr><!-- end ngRepeat: (k, v) in curriculum_arr --><tr class="long-td ng-scope" ng-repeat="(k, v) in curriculum_arr">
+                            <td ng-bind="v.id" class="ng-binding">2</td>
+                            <td ng-bind="v.curriculum_name" class="ng-binding">外语</td>
+                            <td ng-bind="v.create_time" class="ng-binding">2018-01-30 23:02:00</td>
+                            <td>
+                                <a ng-click="deleteCurriculum(v.id);" class="btn btn-danger btn-outline btn-xs">
+                                    <i class="fa fa-trash-o"></i>
+                                    删除
+                                </a>
+                            </td>
+                        </tr><!-- end ngRepeat: (k, v) in curriculum_arr --><tr class="long-td ng-scope" ng-repeat="(k, v) in curriculum_arr">
+                            <td ng-bind="v.id" class="ng-binding">3</td>
+                            <td ng-bind="v.curriculum_name" class="ng-binding">业务课一</td>
+                            <td ng-bind="v.create_time" class="ng-binding">2018-01-30 23:02:00</td>
+                            <td>
+                                <a ng-click="deleteCurriculum(v.id);" class="btn btn-danger btn-outline btn-xs">
+                                    <i class="fa fa-trash-o"></i>
+                                    删除
+                                </a>
+                            </td>
+                        </tr><!-- end ngRepeat: (k, v) in curriculum_arr --><tr class="long-td ng-scope" ng-repeat="(k, v) in curriculum_arr">
+                            <td ng-bind="v.id" class="ng-binding">4</td>
+                            <td ng-bind="v.curriculum_name" class="ng-binding">业务课二</td>
+                            <td ng-bind="v.create_time" class="ng-binding">2018-01-30 23:02:00</td>
+                            <td>
+                                <a ng-click="deleteCurriculum(v.id);" class="btn btn-danger btn-outline btn-xs">
+                                    <i class="fa fa-trash-o"></i>
+                                    删除
+                                </a>
+                            </td>
+                        </tr><!-- end ngRepeat: (k, v) in curriculum_arr -->
+                        </tbody>
                     </table>
                     <div id="AjaxPage" style=" text-align: right;"></div>
                     <div id="allpage" style=" text-align: right;"></div>

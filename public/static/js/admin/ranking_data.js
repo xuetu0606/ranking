@@ -65,9 +65,7 @@ m.controller(
                     var parameter_arr = {
                         "colleges_name" : $scope.data.colleges_search
                     };
-                    if ($scope.data.colleges_search!=""){
-                        $scope.getCollegesData(1, parameter_arr);
-                    }
+                    $scope.getCollegesData(1, parameter_arr);
                 }
             );
 
@@ -124,9 +122,7 @@ m.controller(
                         "faculty_name" : $scope.data.faculty_search,
                         "colleges_id" : $scope.data.colleges_id
                     };
-                    if ($scope.data.faculty_search!=""){
-                        $scope.getFacultyData(parameter_arr);
-                    }
+                    $scope.getFacultyData(parameter_arr);
                 }
             );
 
@@ -167,9 +163,7 @@ m.controller(
                         "major_name" : $scope.data.major_search,
                         "faculty_id" : $scope.data.faculty_id
                     };
-                    if ($scope.data.major_search!=""){
-                        $scope.getMajorData(parameter_arr);
-                    }
+                    $scope.getMajorData(parameter_arr);
                 }
             );
 

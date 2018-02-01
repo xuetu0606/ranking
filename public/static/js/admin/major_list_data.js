@@ -1,3 +1,6 @@
+window.onload = function (){
+    document.getElementById("major_add_name_input").focus();
+};
 /**
  * 后台专业页面js管理
  * @project 2018考研初试排名查询系统

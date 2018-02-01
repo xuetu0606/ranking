@@ -1,3 +1,6 @@
+window.onload = function(){
+    document.getElementById("faculty_add_name_input").focus();
+};
 /**
  * 后台院系所页面js管理
  * @project 2018考研初试排名查询系统

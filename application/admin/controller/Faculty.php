@@ -90,10 +90,19 @@ class Faculty extends Base{
             "colleges_id" => Session::get("colleges_id"),
             "faculty_name" => $request_arr["faculty_name"],
         ];
-        $query_boolean = model("faculty")->saveFacultyInfo($where_arr);
+        $query_has_boolean = model("faculty")->selectFacultyByName($where_arr);
+        if ($query_has_boolean){
+            return $this->response_return_json(
+                $query_has_boolean,
+                $query_has_boolean,
+                "该院系所已存在",
+                "保存失败"
+            );
+        }
+        $query_save_boolean = model("faculty")->saveFacultyInfo($where_arr);
         return $this->response_return_json(
-            $query_boolean,
-            $query_boolean,
+            $query_save_boolean,
+            $query_save_boolean,
             "保存成功",
             "保存失败"
         );

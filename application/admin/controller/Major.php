@@ -90,6 +90,15 @@ class Major extends Base{
             "faculty_id" => Session::get("faculty_id"),
             "major_name" => $request_arr["major_name"],
         ];
+        $query_has_boolean = model("faculty")->selectMajorByName($where_arr);
+        if ($query_has_boolean){
+            return $this->response_return_json(
+                $query_has_boolean,
+                $query_has_boolean,
+                "该专业已存在",
+                "保存失败"
+            );
+        }
         $query_boolean = model("major")->saveMajorInfo($where_arr);
         return $this->response_return_json(
             $query_boolean,

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:98:"D:\workspace\company-www\ranking-lunhui\public/../application/admin\view\student\student_list.html";i:1517056299;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\header.html";i:1516956621;s:81:"D:\workspace\company-www\ranking-lunhui\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"D:\workingspace\ranking\public/../application/admin\view\school\school_list.html";i:1517299954;s:65:"D:\workingspace\ranking\application\admin\view\public\header.html";i:1516956621;s:65:"D:\workingspace\ranking\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,15 +23,37 @@
     }
     </style>
 </head>
-<script src="/static/js/admin/student_list_data.js"></script>
-<body class="gray-bg" ng-app="ranking_admin_student_list_application" ng-controller="ranking_admin_student_list_controller">
+<script src="/static/js/function.js"></script>
+<script src="/static/js/admin/school_list_data.js"></script>
+<body class="gray-bg" ng-app="ranking_admin_school_list_application" ng-controller="ranking_admin_school_list_controller">
 <div class="wrapper wrapper-content animated fadeInRight">
     <!-- Panel Other -->
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>用户列表</h5>
+            <h5>学校列表</h5>
         </div>
         <div class="ibox-content">
+            <!--学校添加框开始-->
+            <div class="row">
+                <div class="col-sm-16">
+                    <div role="form" class="form-inline">
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" placeholder="学校名称" ng-model="colleges.colleges_name">
+                            </div>
+                            <div class="input-group col-md-4">
+                                <input type="text" class="form-control" placeholder="交流群号" ng-model="colleges.qq_group">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" ng-click="submitCollegesInfo();">
+                                        添加
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--学校添加框结束-->
             <div class="hr-line-dashed"></div>
 
             <div class="example-wrap">
@@ -40,26 +62,30 @@
                         <thead>
                         <tr class="long-tr">
                             <th>ID</th>
-                            <th>账号</th>
-                            <th>姓名</th>
-                            <th>专业科代码</th>
-                            <th>总分</th>
+                            <th>学校名</th>
+                            <th>QQ群</th>
                             <th>添加时间</th>
                             <th>操作</th>
                         </tr>
                         </thead>
-                            <tr class="long-td" ng-repeat="(k, v) in studentArray">
+                            <tr class="long-td" ng-repeat="(k, v) in schoolArray">
                                 <td ng-bind="v.id"></td>
-                                <td ng-bind="v.telephone"></td>
-                                <td ng-bind="v.user_name"></td>
-                                <td ng-bind="v.code"></td>
-                                <td ng-bind="v.total"></td>
+                                <td ng-bind="v.colleges_name"></td>
+                                <td ng-bind="v.qq_group"></td>
                                 <td ng-bind="v.create_time"></td>
                                 <td>
-                                    <div class="btn btn-primary btn-outline btn-xs" ng-click="details(v.id, v.fraction_id);">
+                                    <a href="/admin/school/school_edit/colleges_id/{{v.id}}" class="btn btn-primary btn-outline btn-xs">
+                                        <i class="fa fa-edit"></i>
+                                        编辑
+                                    </a>
+                                    <a href="/admin/faculty/faculty_list/colleges_id/{{v.id}}" class="btn btn-primary btn-outline btn-xs">
                                         <i class="fa fa-paste"></i>
-                                        查看成绩
-                                    </div>
+                                        管理院系所
+                                    </a>
+                                    <a ng-click="deleteColleges(v.id);" class="btn btn-danger btn-outline btn-xs">
+                                        <i class="fa fa-trash-o"></i>
+                                        删除
+                                    </a>
                                 </td>
                             </tr>
                         <tbody id="list-content"></tbody>

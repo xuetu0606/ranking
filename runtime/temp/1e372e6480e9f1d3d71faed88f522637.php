@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"D:\workingspace\ranking\public/../application/admin\view\login.html";i:1517294859;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"D:\workingspace\ranking\public/../application/admin\view\login.html";i:1517277422;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\workingspace\ranking\public/../application/admin\view\index.html";i:1517313904;s:65:"D:\workingspace\ranking\application\admin\view\public\header.html";i:1516956621;s:65:"D:\workingspace\ranking\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\workingspace\ranking\public/../application/admin\view\index.html";i:1517444035;s:65:"D:\workingspace\ranking\application\admin\view\public\header.html";i:1516956621;s:65:"D:\workingspace\ranking\application\admin\view\public\footer.html";i:1516956154;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +47,7 @@
                         </ul>
                     </div>
                     <div class="logo-element">
+                        2018<br/>
                         考研<br/>
                         初试<br/>
                         排名<br/>

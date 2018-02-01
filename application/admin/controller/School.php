@@ -69,8 +69,8 @@ class School extends Base{
         return $this->response_return_json(
             $query_creaet_boolean,
             $query_creaet_boolean,
-            "该学校已存在",
-            "学校创建完毕"
+            "学校创建完毕",
+            "学校创建失败"
         );
     }
 
